@@ -20,18 +20,18 @@ export const Menu: React.FC = () => {
             <NavbarMenuLink to="/" text="Home" />
           </li>
           <li className="menu__item">
-            <NavbarMenuLink to="phones" text="Phones" />
+            <NavbarMenuLink to="/phones" text="Phones" />
           </li>
           <li className="menu__item">
-            <NavbarMenuLink to="tablets" text="Tablets" />
+            <NavbarMenuLink to="/tablets" text="Tablets" />
           </li>
           <li className="menu__item">
-            <NavbarMenuLink to="accessories" text="Accessories" />
+            <NavbarMenuLink to="/accessories" text="Accessories" />
           </li>
         </ul>
         <div className="menu__icons">
-          <NavbarMenuIcon to="favorites" alt="favorites" src={favorite} />
-          <NavbarMenuIcon to="cart" alt="cart" src={cart} />
+          <NavbarMenuIcon to="/favorites" alt="favorites" src={favorite} />
+          <NavbarMenuIcon to="/cart" alt="cart" src={cart} />
         </div>
       </div>
     </nav>

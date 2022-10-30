@@ -1,0 +1,15 @@
+@import '../utils/mixins.scss';
+
+.phones {  
+  &__content {
+    display: flex;
+  }
+
+  &__title {
+    font-size: 32px;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+}
