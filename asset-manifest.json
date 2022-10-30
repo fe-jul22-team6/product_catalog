@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/product_catalog/static/css/main.7b09fb2f.css",
-    "main.js": "/product_catalog/static/js/main.ec76c315.js",
+    "main.js": "/product_catalog/static/js/main.a79f4024.js",
     "static/media/cart.svg": "/product_catalog/static/media/cart.2b1248581dbb254b8916cd5585ebf3c5.svg",
     "static/media/favorite.svg": "/product_catalog/static/media/favorite.f88cdcc2eaac23201a86032b868650bd.svg",
     "index.html": "/product_catalog/index.html",
     "static/media/cross.svg": "/product_catalog/static/media/cross.cdfb6ae506fe360c9ad495bfc61f521d.svg",
     "static/media/burger.svg": "/product_catalog/static/media/burger.48adbcb7fa3445e1cf7631d2bfbea2a1.svg",
     "main.7b09fb2f.css.map": "/product_catalog/static/css/main.7b09fb2f.css.map",
-    "main.ec76c315.js.map": "/product_catalog/static/js/main.ec76c315.js.map"
+    "main.a79f4024.js.map": "/product_catalog/static/js/main.a79f4024.js.map"
   },
   "entrypoints": [
     "static/css/main.7b09fb2f.css",
-    "static/js/main.ec76c315.js"
+    "static/js/main.a79f4024.js"
   ]
 }
