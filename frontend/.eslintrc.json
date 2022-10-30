@@ -13,10 +13,18 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "extends": [
+    "@mate-academy/eslint-config",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "rules": {}
+  "rules": {
+    "no-shadow": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
