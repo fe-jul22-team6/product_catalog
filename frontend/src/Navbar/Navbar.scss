@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
-@import "../utils/mixins.scss";
-@import "../utils/vars.scss";
+@import '../utils/mixins.scss';
+@import '../utils/vars.scss';
 
 .header {
   display: flex;
@@ -62,7 +62,7 @@
   }
 
   &__link {
-    color: #89939A;
+    color: #89939a;
     position: relative;
     padding: 18px 0;
     text-decoration: none;
@@ -83,7 +83,7 @@
 
   &__link:hover::after,
   .is-active::after {
-    content: "";
+    content: '';
     position: absolute;
     background-color: $dark-color;
     left: 0;
@@ -116,6 +116,7 @@
 
 .burger {
   display: flex;
+  box-sizing: border-box;
 
   @include onTablet {
     display: none;
@@ -124,6 +125,6 @@
   &__link {
     display: flex;
     box-shadow: -1px 0px 0px $light-color;
-    padding: 20px 17px;
+    padding: 17px;
   }
 }

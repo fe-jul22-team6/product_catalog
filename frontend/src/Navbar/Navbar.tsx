@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.scss';
 import logo from '../images/logo.png';
 import favorite from '../images/favorite.svg';
@@ -9,11 +8,7 @@ import cart from '../images/cart.svg';
 import { NavbarLink, NavbarIcon } from '../NavbarLink/NavbarLink';
 
 export const Navbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleMenu = () => {
-    setMenuOpen((prevState) => !prevState);
-  };
+  const location = useLocation();
 
   return (
     <header className="header">
@@ -43,12 +38,12 @@ export const Navbar: React.FC = () => {
       </div>
 
       <div className="burger">
-        {menuOpen ? (
-          <NavLink to="/" className="burger__link" onClick={handleMenu}>
+        {location.pathname === '/menu' ? (
+          <NavLink to="/" className="burger__link">
             <img src={cross} alt="cross" className="burger__img" />
           </NavLink>
         ) : (
-          <NavLink to="menu" className="burger__link" onClick={handleMenu}>
+          <NavLink to="menu" className="burger__link">
             <img src={menu} alt="menu" className="burger__img" />
           </NavLink>
         )}
