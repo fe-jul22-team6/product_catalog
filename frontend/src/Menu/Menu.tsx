@@ -1,10 +1,18 @@
 import './Menu.scss';
+import { useNavigate } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import { NavbarMenuLink, NavbarMenuIcon } from '../NavbarLink/NavbarLink';
 import favorite from '../images/favorite.svg';
 import cart from '../images/cart.svg';
 
 export const Menu: React.FC = () => {
-  return (
+  const onTablet = useMediaQuery({
+    query: '(max-width: 640px)',
+  });
+
+  const navigate = useNavigate();
+
+  return onTablet ? (
     <nav className="page__menu menu">
       <div className="menu__content">
         <ul className="menu__list">
@@ -21,11 +29,13 @@ export const Menu: React.FC = () => {
             <NavbarMenuLink to="accessories" text="Accessories" />
           </li>
         </ul>
-        <div className="menu-icons">
+        <div className="menu__icons">
           <NavbarMenuIcon to="favorites" alt="favorites" src={favorite} />
           <NavbarMenuIcon to="cart" alt="cart" src={cart} />
         </div>
       </div>
     </nav>
+  ) : (
+    <>{navigate('/')}</>
   );
 };
