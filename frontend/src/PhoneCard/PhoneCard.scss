@@ -1,9 +1,8 @@
-
 .card {
   width: 270px;
   display: flex;
   flex-direction: column;
-  border: 1px solid #E2E6E9;
+  border: 1px solid #e2e6e9;
   border-radius: 8px;
 
   &__content {
@@ -17,7 +16,7 @@
   }
 
   &__name {
-    color: #0F0F11;
+    color: #0f0f11;
     font-weight: 600;
     font-size: 14px;
   }
@@ -32,12 +31,12 @@
       font-size: 22px;
       line-height: 28px;
       text-decoration-line: line-through;
-      color: #89939A;
+      color: #89939a;
     }
 
     &-new {
       margin-right: 8px;
-      color: #0F0F11;
+      color: #0f0f11;
       font-weight: 700;
       font-size: 22px;
     }
@@ -46,7 +45,7 @@
   &__price::after {
     content: '';
     position: absolute;
-    border: 1px solid #E2E6E9;
+    border: 1px solid #e2e6e9;
     left: 0;
     bottom: -10px;
     width: 100%;
@@ -65,14 +64,14 @@
       font-weight: 600;
       font-size: 12px;
       line-height: 15px;
-      color: #89939A;
+      color: #89939a;
     }
 
     &-value {
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
-      color: #0F0F11;
+      color: #0f0f11;
     }
   }
 
@@ -91,7 +90,7 @@
     font-weight: 600;
     font-size: 14px;
     text-decoration: none;
-    background: #216CFF;
+    background: #216cff;
     border-radius: 8px;
     margin-right: 8px;
     transition: 300ms box-shadow;
@@ -103,12 +102,12 @@
 
   &__favorite {
     padding: 11px;
-    border: 1px solid #B4BDC4;
+    border: 1px solid #b4bdc4;
     border-radius: 48px;
     transition: 300ms border;
 
     &:hover {
-      border: 1px solid #0F0F11;
+      border: 1px solid #0f0f11;
     }
   }
 }
