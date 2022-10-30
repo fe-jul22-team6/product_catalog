@@ -24,7 +24,9 @@
     "eject": "react-scripts eject",
     "format": "prettier --write . --ignore-path .gitignore",
     "format:check": "prettier --check .",
-    "lint": "eslint . --ignore-path .gitignore --color"
+    "lint": "eslint . --ignore-path .gitignore --color",
+    "fix-style": "npm run format && npm run lint -- --fix",
+    "prepare": "cd .. && husky install frontend/.husky"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +54,12 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.tsx": "npm run lint",
+    "*.ts": "npm run lint"
   }
 }
