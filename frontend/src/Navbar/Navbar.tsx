@@ -21,20 +21,20 @@ export const Navbar: React.FC = () => {
             <NavbarLink to="/" text="Home" />
           </li>
           <li className="nav__item">
-            <NavbarLink to="phones" text="Phones" />
+            <NavbarLink to="/phones" text="Phones" />
           </li>
           <li className="nav__item">
-            <NavbarLink to="tablets" text="Tablets" />
+            <NavbarLink to="/tablets" text="Tablets" />
           </li>
           <li className="nav__item">
-            <NavbarLink to="accessories" text="Accessories" />
+            <NavbarLink to="/accessories" text="Accessories" />
           </li>
         </ul>
       </nav>
 
       <div className="icons">
-        <NavbarIcon to="favorites" alt="favorites" src={favorite} />
-        <NavbarIcon to="cart" alt="cart" src={cart} />
+        <NavbarIcon to="/favorites" alt="favorites" src={favorite} />
+        <NavbarIcon to="/cart" alt="cart" src={cart} />
       </div>
 
       <div className="burger">
@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
             <img src={cross} alt="cross" className="burger__img" />
           </NavLink>
         ) : (
-          <NavLink to="menu" className="burger__link">
+          <NavLink to="/menu" className="burger__link">
             <img src={menu} alt="menu" className="burger__img" />
           </NavLink>
         )}
