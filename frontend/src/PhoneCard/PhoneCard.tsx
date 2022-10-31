@@ -29,10 +29,10 @@ export const PhoneCard: React.FC = () => {
           </div>
         </div>
         <div className="card__buttons">
-          <a href="#" className="card__cart">
+          <a href="/" className="card__cart">
             Add to cart
           </a>
-          <a href="#" className="card__favorite">
+          <a href="/" className="card__favorite">
             <img src={favorite} alt="favorite" />
           </a>
         </div>
