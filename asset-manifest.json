@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/product_catalog/static/css/main.39d3854d.css",
-    "main.js": "/product_catalog/static/js/main.ac5d386e.js",
+    "main.css": "/product_catalog/static/css/main.13bdc100.css",
+    "main.js": "/product_catalog/static/js/main.8c58ce0f.js",
+    "static/media/Mont-Regular.otf": "/product_catalog/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
+    "static/media/Mont-SemiBold.otf": "/product_catalog/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
+    "static/media/Mont-Bold.otf": "/product_catalog/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/iphone.png": "/product_catalog/static/media/iphone.7d17d06e20be429ac8f3.png",
     "static/media/cart.svg": "/product_catalog/static/media/cart.2b1248581dbb254b8916cd5585ebf3c5.svg",
     "static/media/favorite.svg": "/product_catalog/static/media/favorite.f88cdcc2eaac23201a86032b868650bd.svg",
     "index.html": "/product_catalog/index.html",
     "static/media/cross.svg": "/product_catalog/static/media/cross.cdfb6ae506fe360c9ad495bfc61f521d.svg",
     "static/media/burger.svg": "/product_catalog/static/media/burger.48adbcb7fa3445e1cf7631d2bfbea2a1.svg",
-    "main.39d3854d.css.map": "/product_catalog/static/css/main.39d3854d.css.map",
-    "main.ac5d386e.js.map": "/product_catalog/static/js/main.ac5d386e.js.map"
+    "main.13bdc100.css.map": "/product_catalog/static/css/main.13bdc100.css.map",
+    "main.8c58ce0f.js.map": "/product_catalog/static/js/main.8c58ce0f.js.map"
   },
   "entrypoints": [
-    "static/css/main.39d3854d.css",
-    "static/js/main.ac5d386e.js"
+    "static/css/main.13bdc100.css",
+    "static/js/main.8c58ce0f.js"
   ]
 }
