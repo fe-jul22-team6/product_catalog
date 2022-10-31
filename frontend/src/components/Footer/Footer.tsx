@@ -1,10 +1,8 @@
-/* eslint-disable prettier/prettier */
 import './Footer.scss';
-import { useEffect } from 'react';
 import { NavbarLink } from '../NavbarLink/NavbarLink';
-import { NavLink, useLocation } from 'react-router-dom';
-import logo from '../images/logo.png';
-import backToTop from '../images/BackToTop.svg';
+import { NavLink } from 'react-router-dom';
+import logo from '../../images/logo.png';
+import backToTop from '../../images/BackToTop.svg';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -16,7 +14,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="footer">
-      <NavLink to="/" className="footer__link">
+      <NavLink to="/" className="footer__logo-link">
         <img src={logo} alt="logo" className="footer__logo" />
       </NavLink>
 
@@ -32,9 +30,9 @@ export const Footer: React.FC = () => {
         </li>
       </ul>
 
-      <button onClick={scrollToTop} className="nav__button">
+      <button onClick={scrollToTop} className="footer__button">
         Back to top
-        <img src={backToTop} alt="logo" className="nav__button-image" />
+        <img src={backToTop} alt="logo" className="footer__button-image" />
       </button>
     </footer>
   );

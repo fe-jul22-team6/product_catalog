@@ -1,6 +1,6 @@
 import './PhoneCard.scss';
-import iphone from '../images/iphone.png';
-import favorite from '../images/favorite.svg';
+import iphone from '../../images/iphone.png';
+import favorite from '../../images/favorite.svg';
 
 export const PhoneCard: React.FC = () => {
   return (

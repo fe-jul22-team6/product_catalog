@@ -1,10 +1,10 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.scss';
-import logo from '../images/logo.png';
-import favorite from '../images/favorite.svg';
-import menu from '../images/burger.svg';
-import cross from '../images/cross.svg';
-import cart from '../images/cart.svg';
+import logo from '../../images/logo.png';
+import favorite from '../../images/favorite.svg';
+import menu from '../../images/burger.svg';
+import cross from '../../images/cross.svg';
+import cart from '../../images/cart.svg';
 import { NavbarLink, NavbarIcon } from '../NavbarLink/NavbarLink';
 
 export const Navbar: React.FC = () => {
@@ -39,7 +39,11 @@ export const Navbar: React.FC = () => {
 
       <div className="burger">
         {location.pathname === '/menu' ? (
-          <NavLink to="/" className="burger__link">
+          <NavLink
+            to="/"
+            className="burger__link"
+            onClick={() => history.back()}
+          >
             <img src={cross} alt="cross" className="burger__img" />
           </NavLink>
         ) : (

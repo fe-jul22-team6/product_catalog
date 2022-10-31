@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import { Routes, Route, Navigate, HashRouter } from 'react-router-dom';
-import PhonesPage from './PhonesPage';
-import PageNotFound from './PageNotFound';
-import Menu from './Menu';
+import PhonesPage from './components/PhonesPage';
+import PageNotFound from './components/PageNotFound';
+import Menu from './components/Menu';
 import { App } from './App';
 
 ReactDOM.render(
