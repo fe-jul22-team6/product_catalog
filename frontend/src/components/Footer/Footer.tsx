@@ -14,26 +14,30 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="footer">
-      <NavLink to="/" className="footer__logo-link">
-        <img src={logo} alt="logo" className="footer__logo" />
-      </NavLink>
+      <div className="container">
+        <div className="footer__content">
+          <NavLink to="/" className="footer__logo-link">
+            <img src={logo} alt="logo" className="footer__logo" />
+          </NavLink>
 
-      <ul className="footer__list">
-        <li className="footer__list-item">
-          <NavbarLink to="/" text="github" />
-        </li>
-        <li className="footer__list-item">
-          <NavbarLink to="/" text="contacts" />
-        </li>
-        <li className="footer__list-item">
-          <NavbarLink to="/" text="rights" />
-        </li>
-      </ul>
+          <ul className="footer__list">
+            <li className="footer__list-item">
+              <NavbarLink to="/" text="github" />
+            </li>
+            <li className="footer__list-item">
+              <NavbarLink to="/" text="contacts" />
+            </li>
+            <li className="footer__list-item">
+              <NavbarLink to="/" text="rights" />
+            </li>
+          </ul>
 
-      <button onClick={scrollToTop} className="footer__button">
-        Back to top
-        <img src={backToTop} alt="logo" className="footer__button-image" />
-      </button>
+          <button onClick={scrollToTop} className="footer__button">
+            Back to top
+            <img src={backToTop} alt="logo" className="footer__button-image" />
+          </button>
+        </div>
+      </div>
     </footer>
   );
 };

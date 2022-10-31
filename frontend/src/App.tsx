@@ -16,11 +16,7 @@ export const App: React.FC = () => {
         </div>
       </div>
 
-      {location.pathname !== '/menu' && (
-        <div className="container">
-          <Footer />
-        </div>
-      )}
+      {location.pathname !== '/menu' && <Footer />}
     </>
   );
 };

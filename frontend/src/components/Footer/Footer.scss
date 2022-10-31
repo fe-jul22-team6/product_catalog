@@ -1,17 +1,23 @@
 @import '../../utils/mixins.scss';
 @import '../../utils/vars.scss';
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 32px;
 
-  @include onTablet {
-    height: 96px;
-    margin-bottom: 0;
-    flex-direction: row;
-    justify-content: space-between;
+.footer {
+  margin-top: 1px;
+  box-shadow: 0px -1px 0px #E2E6E9;
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      height: 96px;
+      margin-bottom: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__logo-link {
@@ -58,11 +64,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-  
+
     &-image {
       margin-left: 16px;
     }
   }
 }
-
-

@@ -1,6 +1,8 @@
 @import '../../utils/vars.scss';
 
 .menu {
+  height: 100vh;
+
   &__list {
     display: flex;
     flex-direction: column;
