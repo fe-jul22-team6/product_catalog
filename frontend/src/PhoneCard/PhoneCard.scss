@@ -1,15 +1,15 @@
 .card {
-  width: 270px;
-  display: flex;
-  flex-direction: column;
   border: 1px solid #e2e6e9;
   border-radius: 8px;
 
   &__content {
+    display: flex;
+    flex-direction: column;
     padding: 32px;
   }
 
   &__image {
+    margin: 0 auto;
     height: 200px;
     width: 200px;
     margin-bottom: 24px;
@@ -27,7 +27,7 @@
     position: relative;
 
     &-old {
-      font-weight: 500;
+      font-weight: 600;
       font-size: 22px;
       line-height: 28px;
       text-decoration-line: line-through;
@@ -37,7 +37,7 @@
     &-new {
       margin-right: 8px;
       color: #0f0f11;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 22px;
     }
   }
@@ -61,7 +61,7 @@
     margin-bottom: 8px;
 
     &-title {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 12px;
       line-height: 15px;
       color: #89939a;
