@@ -67,3 +67,24 @@
     padding: 17px;
   }
 }
+
+.icons {
+  display: none;
+
+  @include onTablet {
+    display: flex;
+  }
+
+  &__link {
+    display: flex;
+    box-shadow: -1px 0px 0px $light-color;
+
+    @include onTablet {
+      padding: 16px;
+    }
+
+    @include onDesktop {
+      padding: 25px;
+    }
+  }
+}
