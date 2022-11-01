@@ -18,12 +18,12 @@
   }
 
   &__link:hover,
-  .is-active {
+  &__link_is_active {
     color: $dark-color;
   }
 
   &__link:hover::after,
-  .is-active::after {
+  &__link_is_active::after {
     content: '';
     position: absolute;
     background-color: $dark-color;
@@ -46,12 +46,12 @@
   }
 
   &__link:hover,
-  .is-active {
+  &__link_is_active {
     color: $dark-color;
   }
 
   &__link:hover::after,
-  .is-active::after {
+  &__link_is_active::after {
     content: '';
     position: absolute;
     background-color: $dark-color;
@@ -61,21 +61,13 @@
     height: 2px;
   }
 
-  &__icons {
+  &__icons_link {
     display: flex;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  
-    &_link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50%;
-      box-shadow: -1px -1px 0px $light-color;
-      padding: 25px 0;
-    }
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    box-shadow: -1px -1px 0px $light-color;
+    padding: 25px 0;
   }
 }
 

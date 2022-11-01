@@ -1,4 +1,4 @@
-import './Menu.scss';
+import styles from './Menu.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { NavbarMenuLink, NavbarMenuIcon } from '../NavbarLink/NavbarLink';
@@ -13,23 +13,23 @@ export const Menu: React.FC = () => {
   const navigate = useNavigate();
 
   return onTablet ? (
-    <nav className="page__menu menu">
-      <div className="menu__content">
-        <ul className="menu__list">
-          <li className="menu__item">
+    <nav className={styles.menu}>
+      <div className={styles.menu__content}>
+        <ul className={styles.menu__list}>
+          <li className={styles.menu__item}>
             <NavbarMenuLink to="/" text="Home" />
           </li>
-          <li className="menu__item">
+          <li className={styles.menu__item}>
             <NavbarMenuLink to="/phones" text="Phones" />
           </li>
-          <li className="menu__item">
+          <li className={styles.menu__item}>
             <NavbarMenuLink to="/tablets" text="Tablets" />
           </li>
-          <li className="menu__item">
+          <li className={styles.menu__item}>
             <NavbarMenuLink to="/accessories" text="Accessories" />
           </li>
         </ul>
-        <div className="menu__icons">
+        <div className={styles.menu__icons}>
           <NavbarMenuIcon to="/favorites" alt="favorites" src={favorite} />
           <NavbarMenuIcon to="/cart" alt="cart" src={cart} />
         </div>

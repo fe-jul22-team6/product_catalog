@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-import './NavbarLink.scss';
+import styles from './NavbarLink.module.scss';
 
 type PropsLink = {
   to: string;
@@ -18,7 +18,7 @@ export const NavbarLink: React.FC<PropsLink> = ({ to, text }) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        classNames('nav__link', { 'is-active': isActive })
+        classNames(styles.nav__link, { [styles.nav__link_is_active]: isActive })
       }
       end
     >
@@ -32,7 +32,9 @@ export const NavbarMenuLink: React.FC<PropsLink> = ({ to, text }) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        classNames('menu__link', { 'is-active': isActive })
+        classNames(styles.menu__link, {
+          [styles.menu__link_is_active]: isActive,
+        })
       }
       end
     >
@@ -43,16 +45,16 @@ export const NavbarMenuLink: React.FC<PropsLink> = ({ to, text }) => {
 
 export const NavbarIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
   return (
-    <NavLink to={to} className="icons__link">
-      <img src={src} alt={alt} className="icons__img" />
+    <NavLink to={to} className={styles.icons__link}>
+      <img src={src} alt={alt} className={styles.icons__img} />
     </NavLink>
   );
 };
 
 export const NavbarMenuIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
   return (
-    <NavLink to={to} className="menu__icons_link">
-      <img src={src} alt={alt} className="menu__icons_img" />
+    <NavLink to={to} className={styles.menu__icons_link}>
+      <img src={src} alt={alt} className={styles.menu__icons_img} />
     </NavLink>
   );
 };
