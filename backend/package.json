@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "prestart": "npm run build",
     "start": "node dist/index.js",
     "dev": "tsc -w & nodemon .",
     "format": "prettier --write . --ignore-path .gitignore",
