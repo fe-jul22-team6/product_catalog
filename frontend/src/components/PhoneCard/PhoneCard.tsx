@@ -1,31 +1,49 @@
 import './PhoneCard.scss';
-import iphone from '../../images/iphone.png';
 import favorite from '../../images/favorite.svg';
 
-export const PhoneCard: React.FC = () => {
+type Props = {
+  name: string;
+  fullPrice: number;
+  price: number;
+  screen: string;
+  capacity: string;
+  ram: string;
+  image: string;
+};
+
+export const PhoneCard: React.FC<Props> = ({
+  name,
+  fullPrice,
+  price,
+  screen,
+  capacity,
+  ram,
+  image,
+}) => {
   return (
     <section className="card">
       <div className="card__content">
-        <img src={iphone} className="card__image" />
-        <div className="card__name">
-          Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
-        </div>
+        <img
+          src={`http://localhost:5000/static/${image.slice(3)}`}
+          className="card__image"
+        />
+        <div className="card__name">{name}</div>
         <div className="card__price">
-          <div className="card__price-new">$799</div>
-          <div className="card__price-old">$899</div>
+          <div className="card__price-new">{`${fullPrice} $`}</div>
+          <div className="card__price-old">{`${price} $`}</div>
         </div>
         <div className="card__characteristics">
           <div className="card__description">
             <div className="card__description-title">Screen</div>
-            <div className="card__description-value">5.8” OLED</div>
+            <div className="card__description-value">{screen}</div>
           </div>
           <div className="card__description">
             <div className="card__description-title">Capacity</div>
-            <div className="card__description-value">64 GB</div>
+            <div className="card__description-value">{capacity}</div>
           </div>
           <div className="card__description">
             <div className="card__description-title">RAM</div>
-            <div className="card__description-value">4 GB</div>
+            <div className="card__description-value">{ram}</div>
           </div>
         </div>
         <div className="card__buttons">
