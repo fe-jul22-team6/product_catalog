@@ -1,4 +1,4 @@
-import './Footer.scss';
+import styles from './Footer.module.scss';
 import { NavbarLink } from '../NavbarLink/NavbarLink';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
@@ -13,28 +13,32 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer__content">
-          <NavLink to="/" className="footer__logo-link">
-            <img src={logo} alt="logo" className="footer__logo" />
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.footer__content}>
+          <NavLink to="/" className={styles.footer__logo_link}>
+            <img src={logo} alt="logo" className={styles.footer__logo} />
           </NavLink>
 
-          <ul className="footer__list">
-            <li className="footer__list-item">
+          <ul className={styles.footer__list}>
+            <li className={styles.footer__list_item}>
               <NavbarLink to="/" text="github" />
             </li>
-            <li className="footer__list-item">
+            <li className={styles.footer__list_item}>
               <NavbarLink to="/" text="contacts" />
             </li>
-            <li className="footer__list-item">
+            <li className={styles.footer__list_item}>
               <NavbarLink to="/" text="rights" />
             </li>
           </ul>
 
-          <button onClick={scrollToTop} className="footer__button">
+          <button onClick={scrollToTop} className={styles.footer__button}>
             Back to top
-            <img src={backToTop} alt="logo" className="footer__button-image" />
+            <img
+              src={backToTop}
+              alt="logo"
+              className={styles.footer__button_image}
+            />
           </button>
         </div>
       </div>

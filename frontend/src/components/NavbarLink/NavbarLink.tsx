@@ -51,8 +51,8 @@ export const NavbarIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
 
 export const NavbarMenuIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
   return (
-    <NavLink to={to} className="menu__icons-link">
-      <img src={src} alt={alt} className="menu__icons-img" />
+    <NavLink to={to} className="menu__icons_link">
+      <img src={src} alt={alt} className="menu__icons_img" />
     </NavLink>
   );
 };

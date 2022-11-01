@@ -20,7 +20,7 @@
     }
   }
 
-  &__logo-link {
+  &__logo_link {
     display: flex;
     justify-items: center;
     margin: 32px 0;
@@ -41,7 +41,7 @@
       justify-content: center;
     }
 
-    &-item {
+    &_item {
       @include onTablet {
         margin: 0 8px;
       }
@@ -65,8 +65,23 @@
     align-items: center;
     cursor: pointer;
 
-    &-image {
+    &_image {
       margin-left: 16px;
     }
   }
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
+}
+
