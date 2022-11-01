@@ -27,7 +27,7 @@
     margin: 10px 0 28px;
     position: relative;
 
-    &-old {
+    &_old {
       font-weight: 600;
       font-size: 22px;
       line-height: 28px;
@@ -35,7 +35,7 @@
       color: #89939a;
     }
 
-    &-new {
+    &_new {
       margin-right: 8px;
       color: #0f0f11;
       font-weight: 800;
@@ -61,14 +61,14 @@
     justify-content: space-between;
     margin-bottom: 8px;
 
-    &-title {
+    &_title {
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
       color: #89939a;
     }
 
-    &-value {
+    &_value {
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
