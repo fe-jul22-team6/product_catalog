@@ -9,6 +9,8 @@ app.use(cors());
 
 const port = process.env.PORT || 5000;
 
+app.use('/static', express.static('public'));
+
 app.get('/phones', (req: Request, res: Response) => {
   res.statusCode = 200;
   res.send(phones);

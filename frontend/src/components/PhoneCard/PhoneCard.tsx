@@ -1,31 +1,49 @@
 import styles from './PhoneCard.module.scss';
-import iphone from '../../images/iphone.png';
 import favorite from '../../images/favorite.svg';
 
-export const PhoneCard: React.FC = () => {
+type Props = {
+  name: string;
+  fullPrice: number;
+  price: number;
+  screen: string;
+  capacity: string;
+  ram: string;
+  image: string;
+};
+
+export const PhoneCard: React.FC<Props> = ({
+  name,
+  fullPrice,
+  price,
+  screen,
+  capacity,
+  ram,
+  image,
+}) => {
   return (
     <section className={styles.card}>
       <div className={styles.card__content}>
-        <img src={iphone} className={styles.card__image} />
-        <div className={styles.card__name}>
-          Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
-        </div>
+        <img
+          src={`http://localhost:5000/static/${image}`}
+          className={styles.card__image}
+        />
+        <div className={styles.card__name}>{name}</div>
         <div className={styles.card__price}>
-          <div className={styles.card__price_new}>$799</div>
-          <div className={styles.card__price_old}>$899</div>
+          <div className={styles.card__price_new}>{`${fullPrice} $`}</div>
+          <div className={styles.card__price_old}>{`${price} $`}</div>
         </div>
         <div className={styles.card__characteristics}>
           <div className={styles.card__description}>
             <div className={styles.card__description_title}>Screen</div>
-            <div className={styles.card__description_value}>5.8” OLED</div>
+            <div className={styles.card__description_value}>{screen}</div>
           </div>
           <div className={styles.card__description}>
             <div className={styles.card__description_title}>Capacity</div>
-            <div className={styles.card__description_value}>64 GB</div>
+            <div className={styles.card__description_value}>{capacity}</div>
           </div>
           <div className={styles.card__description}>
             <div className={styles.card__description_title}>RAM</div>
-            <div className={styles.card__description_value}>4 GB</div>
+            <div className={styles.card__description_value}>{ram}</div>
           </div>
         </div>
         <div className={styles.card__buttons}>
