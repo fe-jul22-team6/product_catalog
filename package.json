@@ -4,7 +4,7 @@
   "description": "- [DEMO LINK](https://fe-jul22-team6.github.io/product_catalog/)",
   "main": "index.js",
   "scripts": {
-    "start": "npm start --prefix ./backend",
+    "start": "node ./backend/dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
