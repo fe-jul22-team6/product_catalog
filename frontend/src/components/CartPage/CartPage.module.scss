@@ -15,7 +15,7 @@
     }
   }
 
-  &__product-list {
+  &__product_list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
@@ -25,7 +25,7 @@
     }
   }
 
-  &__back-button {
+  &__back_button {
     display: flex;
   }
 }
@@ -45,7 +45,7 @@
   }
 }
 
-.product-list {
+.product_list {
   &__item,
   &_checkout {
     grid-column: 1/5;
@@ -78,13 +78,13 @@
 }
 
 .item {
-  &-information {
+  &_information {
     display: flex;
     align-items: center;
     padding-top: 16px;
   }
 
-  &-other-info {
+  &_other_info {
     display: flex;
     justify-content: space-between;
   }
@@ -106,7 +106,7 @@
       padding: 0 50px;
     }
 
-    &-counter {
+    &_counter {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -123,7 +123,7 @@
       }
     }
 
-    &-count {
+    &_count {
       font-weight: 600;
       font-size: 14px;
       line-height: 21px;
@@ -151,7 +151,7 @@
 }
 
 .checkout {
-  &-total {
+  &_total {
     font-weight: 800;
     font-size: 32px;
     line-height: 41px;
@@ -159,7 +159,7 @@
     margin: 20px 0 0;
   }
 
-  &-count {
+  &_count {
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
@@ -170,7 +170,7 @@
     border-bottom: 1px solid #e2e6e9;
   }
 
-  &-button {
+  &_button {
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
@@ -189,6 +189,7 @@
   }
 
   &__link {
+    margin-bottom: 70px;
     font-weight: 700;
     font-size: 14px;
     line-height: 21px;
@@ -206,6 +207,7 @@
     }
 
     @include onDesktop {
+      margin-bottom: 0;
       font-size: 28px;
     }
   }
@@ -214,11 +216,16 @@
 .dialog {
   &__container {
     display: flex;
-    justify-content: space-around;
-    margin-top: 50%;
+    flex-direction: column;
+    align-items: center;
+
+    @include onDesktop {
+      justify-content: space-around;
+      flex-direction: row;
+    }
   }
 
   &__title {
-    margin: 30px auto;
+    margin: 30px auto 70px;
   }
 }

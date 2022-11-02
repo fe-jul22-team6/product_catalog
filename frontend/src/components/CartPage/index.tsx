@@ -1,3 +1,3 @@
-import { CartItem } from './CartItem';
+import { CartPage } from './CartPage';
 
-export default CartItem;
+export default CartPage;
