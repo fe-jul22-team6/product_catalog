@@ -29,10 +29,10 @@ export const Menu: React.FC = () => {
             <NavbarMenuLink to="/accessories" text="Accessories" />
           </li>
         </ul>
-        <div className={styles.menu__icons}>
-          <NavbarMenuIcon to="/favorites" alt="favorites" src={favorite} />
-          <NavbarMenuIcon to="/cart" alt="cart" src={cart} />
-        </div>
+      </div>
+      <div className={styles.menu__icons}>
+        <NavbarMenuIcon to="/favorites" alt="favorites" src={favorite} />
+        <NavbarMenuIcon to="/cart" alt="cart" src={cart} />
       </div>
     </nav>
   ) : (
