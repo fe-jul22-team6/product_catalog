@@ -20,8 +20,8 @@ export const PhoneCard: React.FC<Props> = ({ phone, likeImg }) => {
         />
         <div className={styles.card__name}>{name}</div>
         <div className={styles.card__price}>
-          <div className={styles.card__price_new}>{`${fullPrice} $`}</div>
-          <div className={styles.card__price_old}>{`${price} $`}</div>
+          <div className={styles.card__price_new}>{`${price} $`}</div>
+          <div className={styles.card__price_old}>{`${fullPrice} $`}</div>
         </div>
         <div className={styles.card__characteristics}>
           <div className={styles.card__description}>
