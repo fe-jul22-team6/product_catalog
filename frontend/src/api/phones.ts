@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'https://fast-shelf-97147.herokuapp.com/';
 
 export function getAll() {
   return axios.get('/phones').then((res) => res.data);

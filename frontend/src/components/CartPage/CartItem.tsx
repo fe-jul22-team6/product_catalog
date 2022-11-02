@@ -32,7 +32,7 @@ export const CartItem: React.FC = () => {
               </button>
               <div className="item__photo">
                 <img
-                  src={`http://localhost:5000/static/${image}`}
+                  src={`https://fast-shelf-97147.herokuapp.com/static/${image}`}
                   alt=""
                   className="photo"
                 />
