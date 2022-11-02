@@ -87,10 +87,13 @@
     justify-content: center;
     width: 75%;
     color: #fff;
+    font-family: 'Mont';
+    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     text-decoration: none;
     background: #216cff;
+    border: none;
     border-radius: 8px;
     margin-right: 8px;
     transition: 300ms box-shadow;
@@ -102,6 +105,7 @@
 
   &__favorite {
     padding: 11px;
+    background: #fff;
     border: 1px solid #b4bdc4;
     border-radius: 48px;
     transition: 300ms border;

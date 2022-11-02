@@ -1,9 +1,7 @@
 @import '../../utils/vars.scss';
 
 .menu {
-  &__content {
-    height: calc(100vh - 83px);
-  }
+  height: calc(100vh - 85px);
 
   &__list {
     display: flex;
@@ -27,8 +25,4 @@
     bottom: 0;
     width: 100%;
   }
-}
-
-.section {
-  position: relative;
 }
