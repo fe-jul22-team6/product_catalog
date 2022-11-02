@@ -31,7 +31,7 @@ export const CartItem: React.FC = () => {
       <h1 className="cart__title">Cart</h1>
       <div className="cart__product-list">
         {phones.map(({ id, name, price, image }) => (
-          <div className="product-list__item">
+          <div className="product-list__item" key={id}>
             <div className="item-information">
               <button className="item__delete" onClick={() => handleDelete(id)}>
                 <img src={cross} alt="" className="item__delete-button" />

@@ -19,7 +19,7 @@ export const PhonesPage: React.FC = () => {
         <p className={styles.phones__count}>{phones.length} phones</p>
         <div className={styles.phones__cards}>
           {phones.map((phone) => (
-            <PhoneCard phone={phone} likeImg={favorite} />
+            <PhoneCard phone={phone} likeImg={favorite} key={phone.id} />
           ))}
         </div>
       </div>
