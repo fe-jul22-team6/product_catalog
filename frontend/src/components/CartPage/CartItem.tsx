@@ -4,12 +4,18 @@ import cross from '../../images/cross.svg';
 import * as phonesApi from '../../api/phones';
 import { useEffect, useState } from 'react';
 import { Phone } from '../../../../backend/src/types/Phone';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import { NavLink } from 'react-router-dom';
 
 export const CartItem: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
-    phonesApi.getAll().then((phones) => setPhones(phones.slice(0, 5))); // sliced first 5 phones for example
+    phonesApi.getAll().then((phones: Phone[]) => setPhones(phones.slice(0, 5))); // sliced first 5 phones for example
   }, []);
 
   const handleDelete = (id: string) => {
@@ -54,7 +60,28 @@ export const CartItem: React.FC = () => {
             ${phones.reduce((a, b) => a + b.price, 0)}
           </h3>
           <p className="checkout-count">Total for {phones.length} items</p>
-          <div className="checkout-button">Checkout</div>
+          <div onClick={handleOpen} className="checkout-button">
+            Checkout
+          </div>
+          <Dialog
+            PaperProps={{
+              sx: { width: '80%', height: '80%' },
+            }}
+            onClose={handleClose}
+            open={open}
+            className="dialog"
+            maxWidth={false}
+          >
+            <h3 className="cart__title dialog__title">Checkout</h3>
+            <div className="dialog__container">
+              <NavLink to="/home" className="checkout__link">
+                To Home page
+              </NavLink>
+              <NavLink to="/phones" className="checkout__link">
+                Continue shopping
+              </NavLink>
+            </div>
+          </Dialog>
         </div>
       </div>
     </section>
