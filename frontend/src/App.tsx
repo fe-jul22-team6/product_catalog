@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer/';
-import './App.scss';
+import styles from './App.module.scss';
 
 export const App: React.FC = () => {
   const location = useLocation();
@@ -10,8 +10,8 @@ export const App: React.FC = () => {
     <>
       <Navbar />
 
-      <div className="section">
-        <div className="container">
+      <div className={styles.section}>
+        <div className={styles.container}>
           <Outlet />
         </div>
       </div>

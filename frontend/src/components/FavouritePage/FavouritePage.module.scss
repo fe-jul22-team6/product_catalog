@@ -1,6 +1,6 @@
 @import '../../utils/mixins.scss';
 
-.phones {
+.favourites {
   &__cards {
     display: grid;
     gap: 40px 16px;
@@ -26,6 +26,6 @@
   &__count {
     margin-top: 12px;
     font-size: 14px;
-    color: #89939A;
+    color: #89939a;
   }
 }
