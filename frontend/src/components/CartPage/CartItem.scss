@@ -1,0 +1,167 @@
+@import '../../utils/mixins.scss';
+
+.cart {
+  &__title {
+    font-weight: 800;
+    font-size: 32px;
+    margin: 24px 0 32px;
+    letter-spacing: -0.01em;
+    color: #0f0f11;
+
+    @include onTablet {
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  &__product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    @include onDesktop {
+      grid-template-columns: repeat(24, 1fr);
+    }
+  }
+
+  &__back-button {
+    display: flex;
+  }
+}
+
+.back-button__text {
+  font-size: 12px;
+  color: #89939a;
+  cursor: pointer;
+}
+
+.product-list {
+  &__item,
+  &_checkout {
+    grid-column: 1/5;
+    border: 1px solid #e2e6e9;
+    border-radius: 16px;
+  }
+
+  &__item {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1/17;
+    }
+  }
+
+  &_checkout {
+    margin: 20px 0 40px;
+
+    @include onDesktop {
+      grid-row: 1;
+      grid-column: 17/25;
+      margin: 0;
+    }
+  }
+}
+
+.item {
+  &-information {
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+  }
+
+  &-other-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    padding-right: 16px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+
+    @include onTablet {
+      padding: 0 50px;
+    }
+
+    &-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid #e2e6e9;
+      border-radius: 48px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    &-count {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      padding: 0 14px;
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+
+    padding: 0 16px;
+  }
+
+  &__delete {
+    display: inline-block;
+    padding: 0 20px 0;
+  }
+}
+
+.checkout {
+  &-total {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    text-align: center;
+    margin: 20px 0 0;
+  }
+
+  &-count {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    margin: 5px 20px 32px;
+    color: #89939a;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e6e9;
+  }
+
+  &-button {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #fff;
+    background: #216cff;
+    border-radius: 8px;
+    text-align: center;
+    padding: 13px;
+    margin: 20px;
+    cursor: pointer;
+  }
+}

@@ -4,6 +4,7 @@ import PhonesPage from './components/PhonesPage';
 import PageNotFound from './components/PageNotFound';
 import FavouritePage from './components/FavouritePage';
 import Menu from './components/Menu';
+import CartItem from './components/CartPage';
 import { App } from './App';
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route path="/phones" element={<PhonesPage />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/favorites" element={<FavouritePage />} />
+        <Route path="/cart" element={<CartItem />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
