@@ -22,6 +22,7 @@
 
     @include onDesktop {
       grid-template-columns: repeat(24, 1fr);
+      padding-bottom: 80px;
     }
   }
 
@@ -143,10 +144,15 @@
   &__delete {
     display: inline-block;
     cursor: pointer;
-    margin: 0 20px 0;
+    margin: 0 35px 0 27px;
     padding: 0;
     border: none;
     background-color: #fafbfc;
+
+    
+    @include onTablet {
+      margin: 0 27px 0 20px;
+    }
   }
 }
 
