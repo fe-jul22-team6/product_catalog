@@ -5,7 +5,7 @@ import { Phone } from '../../../../backend/src/types/Phone';
 
 type Props = {
   phone: Phone;
-  likeImg: string;
+  likeImg?: string;
 };
 
 export const PhoneCard: React.FC<Props> = ({ phone, likeImg }) => {
