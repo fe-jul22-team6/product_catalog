@@ -22,8 +22,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "lint-staged": "^13.0.3",
-    "module-name": "0.0.1-security",
-    "typescript": "^4.8.4"
+    "module-name": "0.0.1-security"
   },
   "devDependencies": {
     "@mate-academy/eslint-config": "0.0.20",
@@ -42,6 +41,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.1",
     "nodemon": "^2.0.20",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
   }
 }
