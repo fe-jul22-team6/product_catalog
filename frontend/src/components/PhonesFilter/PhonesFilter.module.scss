@@ -1,0 +1,49 @@
+@import '../../utils/mixins.scss';
+
+.filter {
+  display: flex;
+  gap: 16px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #89939A;
+
+  &__item_title {
+    margin-bottom: 4px;
+  }
+
+  &__item_sort, &__item_amount {
+    padding-left: 12px;
+    outline: none;
+    border: 1px solid #B4BDC4;
+    border-radius: 8px;
+
+    &:hover {
+      border: 1px solid #89939A;
+    }
+  }
+
+  &__item_sort {
+    width: 136px;
+    height: 40px;
+
+    @include onTablet {
+      width: 187px;
+    }
+
+    @include onDesktop {
+      width: 176px;
+    }
+  }
+
+  &__item_amount {
+    width: 136px;
+    height: 40px;
+
+    @include onDesktop {
+      width: 128px;
+    }
+  }
+}
