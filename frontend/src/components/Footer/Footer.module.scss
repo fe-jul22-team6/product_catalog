@@ -40,15 +40,15 @@
       align-items: center;
       justify-content: center;
     }
+  }
 
-    &_item {
-      @include onTablet {
-        margin: 0 8px;
-      }
+  &__item {
+    @include onTablet {
+      margin: 0 8px;
+    }
 
-      @include onDesktop {
-        margin: 0 50px;
-      }
+    @include onDesktop {
+      margin: 0 50px;
     }
   }
 

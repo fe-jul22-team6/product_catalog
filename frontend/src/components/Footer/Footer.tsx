@@ -1,5 +1,5 @@
 import styles from './Footer.module.scss';
-import { NavbarLink } from '../NavbarLink/NavbarLink';
+import { FooterLink } from '../NavbarLink/NavbarLink';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import backToTop from '../../images/BackToTop.svg';
@@ -21,14 +21,14 @@ export const Footer: React.FC = () => {
           </NavLink>
 
           <ul className={styles.footer__list}>
-            <li className={styles.footer__list_item}>
-              <NavbarLink to="/" text="github" />
+            <li className={styles.footer__item}>
+              <FooterLink to="/" text="github" />
             </li>
-            <li className={styles.footer__list_item}>
-              <NavbarLink to="/" text="contacts" />
+            <li className={styles.footer__item}>
+              <FooterLink to="/" text="contacts" />
             </li>
-            <li className={styles.footer__list_item}>
-              <NavbarLink to="/" text="rights" />
+            <li className={styles.footer__item}>
+              <FooterLink to="/" text="rights" />
             </li>
           </ul>
 

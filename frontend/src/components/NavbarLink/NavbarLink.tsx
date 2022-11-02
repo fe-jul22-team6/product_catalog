@@ -43,6 +43,14 @@ export const NavbarMenuLink: React.FC<PropsLink> = ({ to, text }) => {
   );
 };
 
+export const FooterLink: React.FC<PropsLink> = ({ to, text }) => {
+  return (
+    <NavLink to={to} className={styles.footer__link} end>
+      {text}
+    </NavLink>
+  );
+};
+
 export const NavbarIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
   return (
     <NavLink to={to} className={styles.icons__link}>

@@ -1,25 +1,16 @@
 import styles from './PhoneCard.module.scss';
-import favorite from '../../images/favorite.svg';
+// import favorite from '../../images/favorite.svg';
+// import favoriteActive from '../../images/favorite-active.svg';
+import { Phone } from '../../../../backend/src/types/Phone';
 
 type Props = {
-  name: string;
-  fullPrice: number;
-  price: number;
-  screen: string;
-  capacity: string;
-  ram: string;
-  image: string;
+  phone: Phone;
+  likeImg: string;
 };
 
-export const PhoneCard: React.FC<Props> = ({
-  name,
-  fullPrice,
-  price,
-  screen,
-  capacity,
-  ram,
-  image,
-}) => {
+export const PhoneCard: React.FC<Props> = ({ phone, likeImg }) => {
+  const { name, capacity, ram, screen, fullPrice, price, image } = phone;
+
   return (
     <section className={styles.card}>
       <div className={styles.card__content}>
@@ -47,12 +38,10 @@ export const PhoneCard: React.FC<Props> = ({
           </div>
         </div>
         <div className={styles.card__buttons}>
-          <a href="/" className={styles.card__cart}>
-            Add to cart
-          </a>
-          <a href="/" className={styles.card__favorite}>
-            <img src={favorite} alt="favorite" />
-          </a>
+          <button className={styles.card__cart}>Add to cart</button>
+          <button className={styles.card__favorite}>
+            <img src={likeImg} alt="favorite" />
+          </button>
         </div>
       </div>
     </section>
