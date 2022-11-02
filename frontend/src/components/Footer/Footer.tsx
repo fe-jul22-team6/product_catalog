@@ -1,7 +1,7 @@
 import styles from './Footer.module.scss';
 import { FooterLink } from '../NavbarLink/NavbarLink';
 import { NavLink } from 'react-router-dom';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo-pink.svg';
 import backToTop from '../../images/BackToTop.svg';
 
 export const Footer: React.FC = () => {

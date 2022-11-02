@@ -1,6 +1,7 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.scss';
-import logo from '../../images/logo.png';
+import pinklogo from '../../images/logo-pink.svg';
+import blacklogo from '../../images/logo-black.svg';
 import favorite from '../../images/favorite.svg';
 import menu from '../../images/burger.svg';
 import cross from '../../images/cross.svg';
@@ -9,12 +10,17 @@ import { NavbarLink, NavbarIcon } from '../NavbarLink/NavbarLink';
 
 export const Navbar: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <NavLink to="/" className={styles.header__link}>
-          <img src={logo} alt="logo" className={styles.header__logo} />
+          {location.pathname === '/menu' ? (
+            <img src={blacklogo} alt="logo" className={styles.header__logo} />
+          ) : (
+            <img src={pinklogo} alt="logo" className={styles.header__logo} />
+          )}
         </NavLink>
         <ul className={styles.nav__list}>
           <li className={styles.nav__item}>
@@ -42,7 +48,7 @@ export const Navbar: React.FC = () => {
           <NavLink
             to="/"
             className={styles.burger__link}
-            onClick={() => history.back()}
+            onClick={() => navigate(-1)}
           >
             <img src={cross} alt="cross" className={styles.burger__img} />
           </NavLink>
