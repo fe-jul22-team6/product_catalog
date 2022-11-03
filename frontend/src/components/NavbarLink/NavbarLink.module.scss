@@ -75,14 +75,15 @@
   &__link {
     color: #89939a;
     position: relative;
+    padding-bottom: 5px;
     text-decoration: none;
     font-weight: 800;
     font-size: 12px;
     line-height: 36px;
     text-transform: uppercase;
 
-    @include onDesktop {
-      padding: 26px 0;
+    @include onTablet {
+      padding-bottom: 16px;
     }
   }
 
