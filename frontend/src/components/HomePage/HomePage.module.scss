@@ -6,15 +6,49 @@
   @include onDesktop {
     padding-bottom: 80px;
   }
+
+  &__banner {
+    margin: 0 auto 66px;
+    width: 320px;
+    
+    @include onTablet {
+      width: 550px;
+      margin-bottom: 74px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+      width: 1040px;
+    }
+
+    &_img {
+      height: 320px;
+      border-radius: 4px;
+
+      @include onTablet {
+        height: 210px;
+      }
   
+      @include onDesktop {
+        height: 400px;
+      }
+    }
+  }
+
   &__title {
     margin: 0;
     font-weight: 800;
     font-size: 32px;
-    margin-bottom: 56px;
+    margin-bottom: 24px;
 
     @include onTablet {
       font-size: 48px;
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      margin-bottom: 56px;
     }
   }
 

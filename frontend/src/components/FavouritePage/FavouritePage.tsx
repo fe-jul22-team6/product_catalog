@@ -31,7 +31,11 @@ export const FavouritePage: React.FC = () => {
           <p className={styles.favourites__count}>{phones.length} phones</p>
           <div className={styles.favourites__cards}>
             {phones.map((phone) => (
-              <PhoneCard phone={phone} likeImg={favoriteActive} />
+              <PhoneCard
+                phone={phone}
+                likeImg={favoriteActive}
+                key={phone.id}
+              />
             ))}
           </div>
         </div>

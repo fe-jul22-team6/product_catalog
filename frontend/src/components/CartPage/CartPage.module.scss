@@ -147,7 +147,6 @@
     border: none;
     background-color: #fafbfc;
 
-    
     @include onTablet {
       margin: 0 27px 0 20px;
     }
@@ -196,7 +195,6 @@
     margin-bottom: 70px;
     font-weight: 700;
     font-size: 14px;
-    line-height: 21px;
     color: #89939a;
     text-transform: uppercase;
     transition: 0.3s;
@@ -207,12 +205,12 @@
     }
 
     @include onTablet {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     @include onDesktop {
       margin-bottom: 0;
-      font-size: 28px;
+      font-size: 24px;
     }
   }
 }
