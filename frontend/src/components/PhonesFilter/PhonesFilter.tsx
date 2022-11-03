@@ -23,7 +23,9 @@ export const PhonesFilter: React.FC<Props> = ({ phones, setVisiblePhones }) => {
 
   const filterPhones = (value: string) => {
     if (value === SortBy.Newest) {
-      setVisiblePhones(phones.slice(0, selectedAmount));
+      setVisiblePhones(
+        [...phones].sort((phone1, phone2) => phone2.year - phone1.year)
+      );
 
       return;
     }
