@@ -1,0 +1,105 @@
+@import '../../utils/mixins.scss';
+.ProductPage {
+  &__title {
+    font-weight: 800;
+    font-size: 22px;
+
+    @include onTablet {
+      font-size: 32px;
+    }
+  }
+
+  &__about {
+    margin: 56px 0;
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+
+    &_title {
+      font-size: 20px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        border: 1px solid #E2E6E9;
+        bottom: -16px;
+        left: 0;
+        width: 100%;
+      }
+
+      @include onTablet {
+        font-size: 22px;
+        font-weight: 800;
+      }
+    }
+
+    &_subtitle {
+      font-size: 16px;
+      margin-top: 48px;
+
+
+      @include onTablet {
+        font-size: 20px;
+      }
+    }
+
+    &_text {
+      font-weight: 600;
+      font-size: 14px;
+      color: #89939A;
+
+    }
+  }
+
+  &__techspecs {
+    grid-column: 7 / 13;
+    margin: 56px 0;
+
+    &_title {
+      position: relative;
+
+      @include onTablet {
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        border: 1px solid #E2E6E9;
+        bottom: -16px;
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &_subtitle {
+      font-weight: 500;
+      font-size: 14px;
+      color: #89939A;
+      line-height: 21px;
+
+    }
+    &_text {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    &_wrapper {
+      display: flex;
+      justify-content: space-between;
+      height: 16px;
+      margin: 8px 0;
+    }
+  }
+}
+
+.container {
+  @include onDesktop {
+    display: grid;
+    gap: 64px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
