@@ -7,7 +7,7 @@ import { Phone } from '../../../../backend/src/types/Phone';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Loader } from '../Loader';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export const CartPage: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -16,6 +16,7 @@ export const CartPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     phonesApi
@@ -37,7 +38,10 @@ export const CartPage: React.FC = () => {
         <h1 className={styles.cart__title}>Something went wrong</h1>
       ) : phones.length ? (
         <>
-          <div className={styles.cart__back_button}>
+          <div
+            className={styles.cart__back_button}
+            onClick={() => navigate(-1)}
+          >
             <img src={back} alt="Back button" />
             <span className={styles.back_button__text}>Back</span>
           </div>

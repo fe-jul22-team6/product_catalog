@@ -28,22 +28,20 @@
 
   &__back_button {
     display: flex;
+    cursor: pointer;
+    color: #89939a;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: #000;
+    }
   }
 }
 
 .photo {
   height: 66px;
-}
-
-.back-button__text {
-  font-size: 12px;
-  color: #89939a;
-  cursor: pointer;
-  transition: 0.3s;
-
-  &:hover {
-    color: #000;
-  }
 }
 
 .product_list {
