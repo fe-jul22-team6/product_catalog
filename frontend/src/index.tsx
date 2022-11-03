@@ -6,6 +6,7 @@ import PageNotFound from './components/PageNotFound';
 import FavouritePage from './components/FavouritePage';
 import Menu from './components/Menu';
 import CartPage from './components/CartPage';
+import ProductPage from './components/ProductPage';
 import { App } from './App';
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path="/menu" element={<Menu />} />
         <Route path="/favorites" element={<FavouritePage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
