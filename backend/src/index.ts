@@ -17,6 +17,29 @@ app.get('/phones', (req: Request, res: Response) => {
   res.send(phones);
 });
 
+// app.get('/phones/new', (req: Request, res: Response) => {
+//   const newPhones = phones
+//     .sort((a: { year: number }, b: { year: number }) => b.year - a.year)
+//     .slice(0, 10);
+
+//   res.statusCode = 200;
+//   res.send(newPhones);
+// });
+
+// app.get('/phones/discount', (req: Request, res: Response) => {
+//   const discountPhones = phones
+//     .sort(
+//       (
+//         a: { fullPrice: number; price: number },
+//         b: { fullPrice: number; price: number }
+//       ) => b.fullPrice - b.price - (a.fullPrice - a.price)
+//     )
+//     .slice(0, 10);
+
+//   res.statusCode = 200;
+//   res.send(discountPhones);
+// });
+
 app.get('/phones/:phoneId', (req, res) => {
   const phoneId = req.params.phoneId;
 

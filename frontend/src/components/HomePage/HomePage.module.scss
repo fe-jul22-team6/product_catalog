@@ -1,0 +1,32 @@
+@import '../../utils/mixins.scss';
+
+.phones {
+  margin-bottom: 64px;
+
+  @include onDesktop {
+    margin-bottom: 80px;
+  }
+  
+  &__title {
+    margin: 0;
+    font-weight: 800;
+    font-size: 32px;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 800;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  &__count {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #89939a;
+  }
+}
