@@ -18,7 +18,7 @@ app.get('/phones', (req: Request, res: Response) => {
 });
 
 app.get('/phones/new', (req: Request, res: Response) => {
-  const newPhones = phones
+  const newPhones = [...phones]
     .sort((a: { year: number }, b: { year: number }) => b.year - a.year)
     .slice(0, 10);
 
@@ -27,7 +27,7 @@ app.get('/phones/new', (req: Request, res: Response) => {
 });
 
 app.get('/phones/discount', (req: Request, res: Response) => {
-  const discountPhones = phones
+  const discountPhones = [...phones]
     .sort(
       (
         a: { fullPrice: number; price: number },
