@@ -11,10 +11,11 @@ enum SortBy {
   HighPrice = 'HighPrice',
   LowPrice = 'LowPrice',
   Newest = 'Newest',
+  noFilterSelected = 'No filter selected',
 }
 
 export const PhonesFilter: React.FC<Props> = ({ phones, setVisiblePhones }) => {
-  const [selectedSort, setSelectedSort] = useState('Newest');
+  const [selectedSort, setSelectedSort] = useState('No filter selected');
   const [selectedAmount, setSelectedAmount] = useState(32);
 
   useEffect(() => {
@@ -56,6 +57,7 @@ export const PhonesFilter: React.FC<Props> = ({ phones, setVisiblePhones }) => {
           value={selectedSort}
           onChange={(event) => setSelectedSort(event.target.value)}
         >
+          <option value={SortBy.noFilterSelected}>No filter selected</option>
           <option value={SortBy.Newest}>Newest</option>
           <option value={SortBy.LowPrice}>Price Low to High</option>
           <option value={SortBy.HighPrice}>Price High to Low</option>

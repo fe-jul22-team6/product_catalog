@@ -8,20 +8,21 @@
   font-size: 12px;
   line-height: 15px;
 
-  color: #89939A;
+  color: #89939a;
 
   &__item_title {
     margin-bottom: 4px;
   }
 
-  &__item_sort, &__item_amount {
+  &__item_sort,
+  &__item_amount {
     padding-left: 12px;
     outline: none;
-    border: 1px solid #B4BDC4;
+    border: 1px solid #b4bdc4;
     border-radius: 8px;
 
     &:hover {
-      border: 1px solid #89939A;
+      border: 1px solid #89939a;
     }
   }
 
