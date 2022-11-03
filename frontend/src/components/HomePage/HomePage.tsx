@@ -23,31 +23,14 @@ export const HomePage: React.FC = () => {
       .finally(() => setIsLoading(false));
 
     phonesApi
-      .getAll()
-      .then((phones) =>
-        setNewPhones(
-          phones
-            .sort((a: { year: number }, b: { year: number }) => b.year - a.year)
-            .slice(0, 10)
-        )
-      )
+      .getNew()
+      .then(setNewPhones)
       .catch(() => setError(true))
       .finally(() => setIsLoading(false));
 
     phonesApi
-      .getAll()
-      .then((phones) =>
-        setHotPhones(
-          phones
-            .sort(
-              (
-                a: { fullPrice: number; price: number },
-                b: { fullPrice: number; price: number }
-              ) => b.fullPrice - b.price - (a.fullPrice - a.price)
-            )
-            .slice(0, 10)
-        )
-      )
+      .getDiscound()
+      .then(setHotPhones)
       .catch(() => setError(true))
       .finally(() => setIsLoading(false));
   }, []);
