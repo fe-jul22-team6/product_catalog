@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.css": "/product_catalog/static/css/main.9c200f76.css",
-    "main.js": "/product_catalog/static/js/main.1837c420.js",
+    "main.css": "/product_catalog/static/css/main.079c4e1b.css",
+    "main.js": "/product_catalog/static/js/main.7327b39a.js",
     "static/media/logo-black.svg": "/product_catalog/static/media/logo-black.045620c7e3cd1b316f62bd2f80b05243.svg",
     "static/media/logo-pink.svg": "/product_catalog/static/media/logo-pink.010b7a00c70c8e8ce70c826ad15be23d.svg",
     "static/media/Mont-Regular.otf": "/product_catalog/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/product_catalog/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/product_catalog/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
+    "static/media/banner-iphone14.png": "/product_catalog/static/media/banner-iphone14.37be09a67e807b2be5dc.png",
+    "static/media/banner-iphone14-small.png": "/product_catalog/static/media/banner-iphone14-small.0582a9dfa7e5ea770487.png",
+    "static/media/iphone-small.jpg": "/product_catalog/static/media/iphone-small.32a2cd8c7020a6028828.jpg",
     "static/media/cart.svg": "/product_catalog/static/media/cart.2b1248581dbb254b8916cd5585ebf3c5.svg",
     "static/media/favorite.svg": "/product_catalog/static/media/favorite.f88cdcc2eaac23201a86032b868650bd.svg",
     "static/media/favorite-active.svg": "/product_catalog/static/media/favorite-active.197c85893972fd26ee86af2ee3df0aca.svg",
@@ -15,11 +18,11 @@
     "static/media/burger.svg": "/product_catalog/static/media/burger.48adbcb7fa3445e1cf7631d2bfbea2a1.svg",
     "static/media/BackToTop.svg": "/product_catalog/static/media/BackToTop.411b5a1b4b9eda1837e852a741117fc2.svg",
     "static/media/back.svg": "/product_catalog/static/media/back.4a6dcc3ba009852b1fa06321167ac35e.svg",
-    "main.9c200f76.css.map": "/product_catalog/static/css/main.9c200f76.css.map",
-    "main.1837c420.js.map": "/product_catalog/static/js/main.1837c420.js.map"
+    "main.079c4e1b.css.map": "/product_catalog/static/css/main.079c4e1b.css.map",
+    "main.7327b39a.js.map": "/product_catalog/static/js/main.7327b39a.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c200f76.css",
-    "static/js/main.1837c420.js"
+    "static/css/main.079c4e1b.css",
+    "static/js/main.7327b39a.js"
   ]
 }
