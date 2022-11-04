@@ -11,6 +11,19 @@
     }
   }
 
+  &__photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / 6;
+    margin: 40px 0;
+    max-height: 442px;
+
+    &_img {
+      height: 100%;
+    }
+  }
+
   &__actions {
     @include onTablet {
       grid-column: 7 / 12;
@@ -20,7 +33,29 @@
 
   &__capacity {
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      border: 1px solid $light-color;
+      bottom: -24px;
+      width: 100%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      border: 1px solid $light-color;
+      top: -16px;
+      width: 100%;
+    }
+
+    &_buttons {
+      display: flex;
+      gap: 8px;
+    }
 
     &_button {
       font-family: 'Mont';
@@ -35,18 +70,17 @@
       cursor: pointer;
 
       &:hover {
-        background-color: $dark-color;
-        color: $light-color;
+        background-color: $light-color;
+        color: $dark-color;
       }
 
-      &:active {
+      &_active {
         background-color: $dark-color;
         color: $light-color;
-      }
-
-      &:checked {
-        background-color: $dark-color;
-        color: $light-color;
+        font-family: 'Mont';
+        border-radius: 4px;
+        padding: 4px 8px;
+        line-height: 21px;
       }
     }
   }
@@ -136,9 +170,8 @@
 
   &__buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 40px;
-
   }
 
   &__cart {
@@ -177,9 +210,9 @@
     }
   }
 
-    &__price {
+  &__price {
     display: flex;
-    margin: 10px 0 28px;
+    margin: 32px 0 16px;
     position: relative;
     align-items: center;
 
@@ -209,7 +242,7 @@
 }
 
 .tabletContainer {
-    @include onTablet {
+  @include onTablet {
     display: grid;
     gap: 64px;
     grid-template-columns: repeat(12, 1fr);

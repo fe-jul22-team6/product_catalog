@@ -1,24 +1,125 @@
 import styles from './ProductPage.module.scss';
-import { Phone } from '../../../../backend/src/types/Phone';
 import favorite from '../../images/favorite.svg';
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 export const ProductPage = () => {
+  const [active, setActive] = useState('1');
+
+  const handleClick = (event) => {
+    setActive(event.target.id);
+  };
+
   return (
     <div className="ProductPage">
       <h1 className={styles.ProductPage__title}>Template Title</h1>
       <div className={styles.tabletContainer}>
-        <section className={styles.ProductPage__photos}></section>
+        <section className={styles.ProductPage__photos}>
+          <Swiper
+            spaceBetween={1}
+            slidesPerView="auto"
+            modules={Navigation}
+            className={styles.swiper_container}
+            style={{
+              height: '100%',
+            }}
+          >
+            <SwiperSlide>
+              <img
+                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/00.jpg`}
+                alt="iphone14 banner"
+                className={styles.ProductPage__photos_img}
+                style={{
+                  borderRadius: '8px',
+                }}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/01.jpg`}
+                alt="phones banner"
+                className={styles.ProductPage__photos_img}
+                style={{
+                  borderRadius: '8px',
+                }}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/02.jpg`}
+                alt="phones banner"
+                className={styles.ProductPage__photos_img}
+                style={{
+                  borderRadius: '8px',
+                }}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/03.jpg`}
+                alt="phones banner"
+                className={styles.ProductPage__photos_img}
+                style={{
+                  borderRadius: '8px',
+                }}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/04.jpg`}
+                alt="phones banner"
+                className={styles.ProductPage__photos_img}
+                style={{
+                  borderRadius: '8px',
+                }}
+              />
+            </SwiperSlide>
+          </Swiper>
+        </section>
         <section className={styles.ProductPage__actions}>
           <div className={styles.ProductPage__capacity}>
-            <button className={styles.ProductPage__capacity_button}>
-              64 gb
-            </button>
-            <button className={styles.ProductPage__capacity_button}>
-              256 gb
-            </button>
-            <button className={styles.ProductPage__capacity_button}>
-              512 gb
-            </button>
+            <p className={styles.ProductPage__techspecs_subtitle}>
+              Select capacity
+            </p>
+            <div className={styles.ProductPage__capacity_buttons}>
+              <button
+                key={1}
+                id={'1'}
+                onClick={handleClick}
+                className={
+                  active === '1'
+                    ? styles.ProductPage__capacity_button_active
+                    : styles.ProductPage__capacity_button
+                }
+              >
+                64
+              </button>
+              <button
+                key={2}
+                id={'2'}
+                onClick={handleClick}
+                className={
+                  active === '2'
+                    ? styles.ProductPage__capacity_button_active
+                    : styles.ProductPage__capacity_button
+                }
+              >
+                256
+              </button>
+              <button
+                key={3}
+                id={'3'}
+                onClick={handleClick}
+                className={
+                  active === '3'
+                    ? styles.ProductPage__capacity_button_active
+                    : styles.ProductPage__capacity_button
+                }
+              >
+                512
+              </button>
+            </div>
           </div>
           <div className={styles.ProductPage__price}>
             <div className={styles.ProductPage__price_new}>$799</div>
