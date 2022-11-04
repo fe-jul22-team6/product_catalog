@@ -1,11 +1,55 @@
 import styles from './ProductPage.module.scss';
+import { Phone } from '../../../../backend/src/types/Phone';
+import favorite from '../../images/favorite.svg';
 
 export const ProductPage = () => {
   return (
     <div className="ProductPage">
       <h1 className={styles.ProductPage__title}>Template Title</h1>
-      <section className={styles.ProductPage__photos}></section>
-      <section className={styles.ProductPage__actions}></section>
+      <div className={styles.tabletContainer}>
+        <section className={styles.ProductPage__photos}></section>
+        <section className={styles.ProductPage__actions}>
+          <div className={styles.ProductPage__capacity}>
+            <button className={styles.ProductPage__capacity_button}>
+              64 gb
+            </button>
+            <button className={styles.ProductPage__capacity_button}>
+              256 gb
+            </button>
+            <button className={styles.ProductPage__capacity_button}>
+              512 gb
+            </button>
+          </div>
+          <div className={styles.ProductPage__price}>
+            <div className={styles.ProductPage__price_new}>$799</div>
+            <div className={styles.ProductPage__price_old}>$1199</div>
+          </div>
+          <div className={styles.ProductPage__buttons}>
+            <button className={styles.ProductPage__cart}>Add to cart</button>
+            <button className={styles.ProductPage__favorite}>
+              <img src={favorite} alt="favorite" />
+            </button>
+          </div>
+          <div className={styles.ProductPage__techspecs_wrapper}>
+            <p className={styles.ProductPage__techspecs_subtitle}>Screen</p>
+            <p className={styles.ProductPage__techspecs_text}>6.5” OLED</p>
+          </div>
+          <div className={styles.ProductPage__techspecs_wrapper}>
+            <p className={styles.ProductPage__techspecs_subtitle}>Resolution</p>
+            <p className={styles.ProductPage__techspecs_text}>2688x1242</p>
+          </div>
+          <div className={styles.ProductPage__techspecs_wrapper}>
+            <p className={styles.ProductPage__techspecs_subtitle}>Processor</p>
+            <p className={styles.ProductPage__techspecs_text}>
+              Apple A12 Bionic
+            </p>
+          </div>
+          <div className={styles.ProductPage__techspecs_wrapper}>
+            <p className={styles.ProductPage__techspecs_subtitle}>RAM</p>
+            <p className={styles.ProductPage__techspecs_text}>3 GB</p>
+          </div>
+        </section>
+      </div>
       <div className={styles.container}>
         <section className={styles.ProductPage__about}>
           <h2 className={styles.ProductPage__about_title}>About</h2>
