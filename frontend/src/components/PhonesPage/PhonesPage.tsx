@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Phone } from '../../../../backend/src/types/Phone';
 import favorite from '../../images/favorite.svg';
 import PhonesFilter from '../PhonesFilter';
+import { NavPage } from '../NavPage';
 
 export const PhonesPage: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -28,14 +29,7 @@ export const PhonesPage: React.FC = () => {
   return (
     <section className={styles.phones}>
       <div className={styles.phones__content}>
-        <h1 className={styles.phones__title}>Mobile Phones</h1>
-        <p className={styles.phones__count}>{phones.length} phones</p>
-        <PhonesFilter phones={phones} setVisiblePhones={setvisiblePhones} />
-        <div className={styles.phones__cards}>
-          {visiblePhones.map((phone) => (
-            <PhoneCard phone={phone} likeImg={favorite} key={phone.id} />
-          ))}
-        </div>
+        <NavPage home={true} />
         {isLoading ? (
           <Loader />
         ) : error ? (
@@ -44,8 +38,9 @@ export const PhonesPage: React.FC = () => {
           <div className={styles.phones__content}>
             <h1 className={styles.phones__title}>Mobile Phones</h1>
             <p className={styles.phones__count}>{phones.length} phones</p>
+            <PhonesFilter phones={phones} setVisiblePhones={setvisiblePhones} />
             <div className={styles.phones__cards}>
-              {phones.map((phone) => (
+              {visiblePhones.map((phone) => (
                 <PhoneCard phone={phone} likeImg={favorite} key={phone.id} />
               ))}
             </div>
