@@ -5,24 +5,36 @@ import { Phone } from '../../../../backend/src/types/Phone';
 type Props = {
   phones: Phone[];
   setVisiblePhones: (phones: Phone[]) => void;
+  selectedAmount: number;
+  setSelectedAmount: (amount: number) => void;
 };
 
 enum SortBy {
   HighPrice = 'HighPrice',
   LowPrice = 'LowPrice',
   Newest = 'Newest',
-  noFilterSelected = 'No filter selected',
+  noFilterSelected = 'By default',
 }
 
-export const PhonesFilter: React.FC<Props> = ({ phones, setVisiblePhones }) => {
-  const [selectedSort, setSelectedSort] = useState('No filter selected');
-  const [selectedAmount, setSelectedAmount] = useState(32);
+export const PhonesFilter: React.FC<Props> = ({
+  phones,
+  setVisiblePhones,
+  selectedAmount,
+  setSelectedAmount,
+}) => {
+  const [selectedSort, setSelectedSort] = useState('By default');
 
   useEffect(() => {
     filterPhones(selectedSort);
-  }, [selectedSort, selectedAmount]);
+  }, [selectedSort]);
 
   const filterPhones = (value: string) => {
+    if (value === SortBy.noFilterSelected) {
+      setVisiblePhones([...phones]);
+
+      return;
+    }
+
     if (value === SortBy.Newest) {
       setVisiblePhones(
         [...phones].sort((phone1, phone2) => phone2.year - phone1.year)
@@ -32,17 +44,15 @@ export const PhonesFilter: React.FC<Props> = ({ phones, setVisiblePhones }) => {
     }
 
     setVisiblePhones(
-      [...phones]
-        .sort((phone1, phone2) => {
-          switch (value) {
-            case SortBy.HighPrice:
-              return phone2.price - phone1.price;
-            case SortBy.LowPrice:
-            default:
-              return phone1.price - phone2.price;
-          }
-        })
-        .slice(0, selectedAmount)
+      [...phones].sort((phone1, phone2) => {
+        switch (value) {
+          case SortBy.HighPrice:
+            return phone2.price - phone1.price;
+          case SortBy.LowPrice:
+          default:
+            return phone1.price - phone2.price;
+        }
+      })
     );
   };
 
@@ -57,7 +67,7 @@ export const PhonesFilter: React.FC<Props> = ({ phones, setVisiblePhones }) => {
           value={selectedSort}
           onChange={(event) => setSelectedSort(event.target.value)}
         >
-          <option value={SortBy.noFilterSelected}>No filter selected</option>
+          <option value={SortBy.noFilterSelected}>By default</option>
           <option value={SortBy.Newest}>Newest</option>
           <option value={SortBy.LowPrice}>Price Low to High</option>
           <option value={SortBy.HighPrice}>Price High to Low</option>
