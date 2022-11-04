@@ -98,6 +98,7 @@
       background-repeat: no-repeat;
       background-size: 470px;
       background-position: top left;
+      transition: 300ms transform;
 
       @include onTablet {
         height: 280px;
@@ -108,14 +109,18 @@
       }
     }
 
+    &__photo:hover {
+      transform: scale(1.05);
+    }
+
     &_phonesimg {
       background-image: url(https://fast-shelf-97147.herokuapp.com/static/img/category-phones.png);
-      background-color: #6D6474;
+      background-color: #6d6474;
     }
 
     &_tabletsimg {
       background-image: url(https://fast-shelf-97147.herokuapp.com/static/img/category-tablets.png);
-      background-color: #B4BDC3;
+      background-color: #b4bdc3;
       background-position: top 30px left 20px;
     }
 
@@ -123,7 +128,7 @@
       background-image: url(https://fast-shelf-97147.herokuapp.com/static/img/category-accessories.png);
       background-size: 670px;
       background-position: top 60px left 40px;
-      background-color: #D53C51;
+      background-color: #d53c51;
     }
 
     &__title {
