@@ -10,15 +10,20 @@ export const ProductPage = () => {
         <section className={styles.ProductPage__photos}></section>
         <section className={styles.ProductPage__actions}>
           <div className={styles.ProductPage__capacity}>
-            <button className={styles.ProductPage__capacity_button}>
-              64 gb
-            </button>
-            <button className={styles.ProductPage__capacity_button}>
-              256 gb
-            </button>
-            <button className={styles.ProductPage__capacity_button}>
-              512 gb
-            </button>
+            <p className={styles.ProductPage__techspecs_subtitle}>
+              Select capacity
+            </p>
+            <div className={styles.ProductPage__capacity_buttons}>
+              <button className={styles.ProductPage__capacity_button}>
+                64 gb
+              </button>
+              <button className={styles.ProductPage__capacity_button}>
+                256 gb
+              </button>
+              <button className={styles.ProductPage__capacity_button}>
+                512 gb
+              </button>
+            </div>
           </div>
           <div className={styles.ProductPage__price}>
             <div className={styles.ProductPage__price_new}>$799</div>

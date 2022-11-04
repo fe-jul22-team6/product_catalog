@@ -20,7 +20,29 @@
 
   &__capacity {
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      border: 1px solid $light-color;
+      bottom: -24px;
+      width: 100%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      border: 1px solid $light-color;
+      top: -16px;
+      width: 100%;
+    }
+
+    &_buttons {
+      display: flex;
+      gap: 8px;
+    }
 
     &_button {
       font-family: 'Mont';
@@ -39,12 +61,7 @@
         color: $light-color;
       }
 
-      &:active {
-        background-color: $dark-color;
-        color: $light-color;
-      }
-
-      &:checked {
+      &:focus {
         background-color: $dark-color;
         color: $light-color;
       }
@@ -138,7 +155,6 @@
     display: flex;
     justify-content: space-around;
     height: 40px;
-
   }
 
   &__cart {
@@ -177,9 +193,9 @@
     }
   }
 
-    &__price {
+  &__price {
     display: flex;
-    margin: 10px 0 28px;
+    margin: 32px 0 16px;
     position: relative;
     align-items: center;
 
@@ -209,7 +225,7 @@
 }
 
 .tabletContainer {
-    @include onTablet {
+  @include onTablet {
     display: grid;
     gap: 64px;
     grid-template-columns: repeat(12, 1fr);
