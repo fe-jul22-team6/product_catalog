@@ -57,13 +57,17 @@
       cursor: pointer;
 
       &:hover {
-        background-color: $dark-color;
-        color: $light-color;
+        background-color: $light-color;
+        color: $dark-color;
       }
 
-      &:focus {
+      &_active {
         background-color: $dark-color;
         color: $light-color;
+        font-family: 'Mont';
+        border-radius: 4px;
+        padding: 4px 8px;
+        line-height: 21px;
       }
     }
   }

@@ -1,8 +1,14 @@
 import styles from './ProductPage.module.scss';
-import { Phone } from '../../../../backend/src/types/Phone';
 import favorite from '../../images/favorite.svg';
+import { useState } from 'react';
 
 export const ProductPage = () => {
+  const [active, setActive] = useState('1');
+
+  const handleClick = (event) => {
+    setActive(event.target.id);
+  };
+
   return (
     <div className="ProductPage">
       <h1 className={styles.ProductPage__title}>Template Title</h1>
@@ -14,14 +20,41 @@ export const ProductPage = () => {
               Select capacity
             </p>
             <div className={styles.ProductPage__capacity_buttons}>
-              <button className={styles.ProductPage__capacity_button}>
-                64 gb
+              <button
+                key={1}
+                id={'1'}
+                onClick={handleClick}
+                className={
+                  active === '1'
+                    ? styles.ProductPage__capacity_button_active
+                    : styles.ProductPage__capacity_button
+                }
+              >
+                64
               </button>
-              <button className={styles.ProductPage__capacity_button}>
-                256 gb
+              <button
+                key={2}
+                id={'2'}
+                onClick={handleClick}
+                className={
+                  active === '2'
+                    ? styles.ProductPage__capacity_button_active
+                    : styles.ProductPage__capacity_button
+                }
+              >
+                256
               </button>
-              <button className={styles.ProductPage__capacity_button}>
-                512 gb
+              <button
+                key={3}
+                id={'3'}
+                onClick={handleClick}
+                className={
+                  active === '3'
+                    ? styles.ProductPage__capacity_button_active
+                    : styles.ProductPage__capacity_button
+                }
+              >
+                512
               </button>
             </div>
           </div>
