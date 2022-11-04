@@ -1,3 +1,1 @@
-import { FavouritePage } from './FavouritePage';
-
-export default FavouritePage;
+export * from './FavouritePage';

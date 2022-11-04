@@ -3,7 +3,7 @@
 
 .nav {
   &__link {
-    color: #89939a;
+    color: $grey-color;
     position: relative;
     padding: 18px 0;
     text-decoration: none;
@@ -37,7 +37,7 @@
 .menu {
   &__link {
     padding-bottom: 8px;
-    color: #89939a;
+    color: $grey-color;
     position: relative;
     text-decoration: none;
     font-weight: 800;
@@ -63,17 +63,29 @@
 
   &__icons_link {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     width: 50%;
     box-shadow: -1px -1px 0px $light-color;
     padding: 25px 0;
   }
+
+  &__icons_link:hover::after,
+  &__icons_link_is_active::after {
+    content: '';
+    position: absolute;
+    background-color: $dark-color;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+  }
 }
 
 .footer {
   &__link {
-    color: #89939a;
+    color: $grey-color;
     position: relative;
     padding-bottom: 5px;
     text-decoration: none;
@@ -111,6 +123,7 @@
 
   &__link {
     display: flex;
+    position: relative;
     box-shadow: -1px 0px 0px $light-color;
 
     @include onTablet {
@@ -120,5 +133,16 @@
     @include onDesktop {
       padding: 25px;
     }
+  }
+  
+  &__link:hover::after,
+  &__link_is_active::after {
+    content: '';
+    position: absolute;
+    background-color: $dark-color;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
   }
 }

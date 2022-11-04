@@ -25,6 +25,15 @@ h1 {
   font-family: Mont;
 }
 
+.title {
+  font-weight: 800;
+  font-size: 32px;
+
+  @include onTablet {
+    font-size: 48px;
+  }
+}
+
 .section {
   min-height: calc(100vh - 350px);
   padding-top: 32px;

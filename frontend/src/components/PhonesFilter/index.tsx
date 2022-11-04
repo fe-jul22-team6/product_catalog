@@ -1,3 +1,1 @@
-import { PhonesFilter } from './PhonesFilter';
-
-export default PhonesFilter;
+export * from './PhonesFilter';

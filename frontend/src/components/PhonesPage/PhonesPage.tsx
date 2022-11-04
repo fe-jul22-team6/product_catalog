@@ -1,25 +1,16 @@
 import styles from './PhonePage.module.scss';
-import PhoneCard from '../PhoneCard';
-import { Loader } from '../Loader';
-import * as phonesApi from '../../api/phones';
+import { PhoneCard } from '../PhoneCard';
 import { useEffect, useState } from 'react';
 import { Phone } from '../../../../backend/src/types/Phone';
 import favorite from '../../images/favorite.svg';
-import PhonesFilter from '../PhonesFilter';
+import { PhonesFilter } from '../PhonesFilter';
 
-export const PhonesPage: React.FC = () => {
-  const [phones, setPhones] = useState<Phone[]>([]);
+type Props = {
+  phones: Phone[];
+};
+
+export const PhonesPage: React.FC<Props> = ({ phones }) => {
   const [visiblePhones, setvisiblePhones] = useState<Phone[]>([]);
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    phonesApi
-      .getAll()
-      .then(setPhones)
-      .catch(() => setError(true))
-      .finally(() => setIsLoading(false));
-  }, []);
 
   useEffect(() => {
     setvisiblePhones(phones.slice(0, 32));
@@ -36,11 +27,7 @@ export const PhonesPage: React.FC = () => {
             <PhoneCard phone={phone} likeImg={favorite} key={phone.id} />
           ))}
         </div>
-        {isLoading ? (
-          <Loader />
-        ) : error ? (
-          <h1 className={styles.phones__title}>Something went wrong</h1>
-        ) : phones.length ? (
+        {phones.length ? (
           <div className={styles.phones__content}>
             <h1 className={styles.phones__title}>Mobile Phones</h1>
             <p className={styles.phones__count}>{phones.length} phones</p>

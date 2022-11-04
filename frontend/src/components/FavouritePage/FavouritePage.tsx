@@ -1,5 +1,5 @@
 import styles from './FavouritePage.module.scss';
-import PhoneCard from '../PhoneCard';
+import { PhoneCard } from '../PhoneCard';
 import * as phonesApi from '../../api/phones';
 import { useEffect, useState } from 'react';
 import { Phone } from '../../../../backend/src/types/Phone';

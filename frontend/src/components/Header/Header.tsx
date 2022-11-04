@@ -1,5 +1,5 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import styles from './Navbar.module.scss';
+import styles from './Header.module.scss';
 import pinklogo from '../../images/logo-pink.svg';
 import blacklogo from '../../images/logo-black.svg';
 import favorite from '../../images/favorite.svg';
@@ -8,7 +8,7 @@ import cross from '../../images/cross.svg';
 import cart from '../../images/cart.svg';
 import { NavbarLink, NavbarIcon } from '../NavbarLink/NavbarLink';
 
-export const Navbar: React.FC = () => {
+export const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 

@@ -1,12 +1,9 @@
-@import './utils/mixins.scss';
-
-
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
   width: 14px;
   height: 4px;
   border-radius: 0;
-  background: #0F0F11;
+  background: #0f0f11;
 }
 
 .swiper-custom-pagination {

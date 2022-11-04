@@ -1,5 +1,7 @@
+@import '../../utils/vars.scss';
+
 .card {
-  border: 1px solid #e2e6e9;
+  border: 1px solid $light-color;
   border-radius: 8px;
   background: #fff;
 
@@ -16,7 +18,7 @@
   }
 
   &__name {
-    color: #0f0f11;
+    color: $dark-color;
     font-weight: 600;
     font-size: 14px;
   }
@@ -31,12 +33,12 @@
       font-size: 22px;
       line-height: 28px;
       text-decoration-line: line-through;
-      color: #89939a;
+      color: $grey-color;
     }
 
     &_new {
       margin-right: 8px;
-      color: #0f0f11;
+      color: $dark-color;
       font-weight: 800;
       font-size: 22px;
     }
@@ -45,7 +47,7 @@
   &__price::after {
     content: '';
     position: absolute;
-    border: 1px solid #e2e6e9;
+    border: 1px solid $light-color;
     left: 0;
     bottom: -10px;
     width: 100%;
@@ -64,14 +66,14 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
-      color: #89939a;
+      color: $grey-color;
     }
 
     &_value {
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
-      color: #0f0f11;
+      color: $dark-color;
     }
   }
 
@@ -111,7 +113,7 @@
     transition: 300ms border;
 
     &:hover {
-      border: 1px solid #0f0f11;
+      border: 1px solid $dark-color;
     }
   }
 }
