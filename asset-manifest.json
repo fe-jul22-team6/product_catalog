@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/product_catalog/static/css/main.cf30c448.css",
+    "main.css": "/product_catalog/static/css/main.dbe25eaf.css",
     "main.js": "/product_catalog/static/js/main.9d5084f1.js",
     "static/media/logo-black.svg": "/product_catalog/static/media/logo-black.045620c7e3cd1b316f62bd2f80b05243.svg",
     "static/media/logo-pink.svg": "/product_catalog/static/media/logo-pink.010b7a00c70c8e8ce70c826ad15be23d.svg",
@@ -18,11 +18,11 @@
     "static/media/burger.svg": "/product_catalog/static/media/burger.48adbcb7fa3445e1cf7631d2bfbea2a1.svg",
     "static/media/BackToTop.svg": "/product_catalog/static/media/BackToTop.411b5a1b4b9eda1837e852a741117fc2.svg",
     "static/media/back.svg": "/product_catalog/static/media/back.4a6dcc3ba009852b1fa06321167ac35e.svg",
-    "main.cf30c448.css.map": "/product_catalog/static/css/main.cf30c448.css.map",
+    "main.dbe25eaf.css.map": "/product_catalog/static/css/main.dbe25eaf.css.map",
     "main.9d5084f1.js.map": "/product_catalog/static/js/main.9d5084f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf30c448.css",
+    "static/css/main.dbe25eaf.css",
     "static/js/main.9d5084f1.js"
   ]
 }
