@@ -1,5 +1,5 @@
 import styles from './FavouritePage.module.scss';
-import PhoneCard from '../PhoneCard';
+import { PhoneCard } from '../PhoneCard';
 import * as phonesApi from '../../api/phones';
 import { useEffect, useState } from 'react';
 import { Phone } from '../../../../backend/src/types/Phone';
@@ -31,7 +31,11 @@ export const FavouritePage: React.FC = () => {
           <p className={styles.favourites__count}>{phones.length} phones</p>
           <div className={styles.favourites__cards}>
             {phones.map((phone) => (
-              <PhoneCard phone={phone} likeImg={favoriteActive} />
+              <PhoneCard
+                phone={phone}
+                likeImg={favoriteActive}
+                key={phone.id}
+              />
             ))}
           </div>
         </div>

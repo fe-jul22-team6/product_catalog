@@ -1,4 +1,5 @@
 @import '../../utils/mixins.scss';
+@import '../../utils/vars.scss';
 
 .phones {
   padding-bottom: 64px;
@@ -6,15 +7,61 @@
   @include onDesktop {
     padding-bottom: 80px;
   }
-  
+
+  &__new,
+  &__categories {
+    margin-bottom: 57px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__banner {
+    margin: 0 auto 66px;
+    width: 320px;
+
+    @include onTablet {
+      width: 600px;
+      margin-bottom: 74px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+      width: 1040px;
+    }
+
+    &_img {
+      height: 320px;
+      border-radius: 4px;
+
+      @include onTablet {
+        height: 230px;
+      }
+
+      @include onDesktop {
+        height: 400px;
+      }
+    }
+  }
+
   &__title {
     margin: 0;
     font-weight: 800;
     font-size: 32px;
-    margin-bottom: 56px;
+    margin-bottom: 24px;
 
     @include onTablet {
       font-size: 48px;
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 56px;
     }
   }
 
@@ -24,9 +71,80 @@
     margin-bottom: 24px;
   }
 
-  &__count {
-    margin-top: 12px;
-    font-size: 14px;
-    color: #89939a;
+  &__categories {
+    &__content {
+      display: grid;
+      grid-template-rows: 1fr;
+      column-gap: 16px;
+
+      @include onTablet {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &__card {
+      margin-bottom: 32px;
+      text-decoration: none;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &__photo {
+      margin-bottom: 24px;
+      height: 288px;
+      border-radius: 8px;
+      background-repeat: no-repeat;
+      background-size: 470px;
+      background-position: top left;
+      transition: 300ms transform;
+
+      @include onTablet {
+        height: 280px;
+      }
+
+      @include onDesktop {
+        height: 368px;
+      }
+    }
+
+    &__photo:hover {
+      transform: scale(1.05);
+    }
+
+    &_phonesimg {
+      background-image: url(https://fast-shelf-97147.herokuapp.com/static/img/category-phones.png);
+      background-color: #6d6474;
+    }
+
+    &_tabletsimg {
+      background-image: url(https://fast-shelf-97147.herokuapp.com/static/img/category-tablets.png);
+      background-color: #b4bdc3;
+      background-position: top 30px left 20px;
+    }
+
+    &_accessoriesimg {
+      background-image: url(https://fast-shelf-97147.herokuapp.com/static/img/category-accessories.png);
+      background-size: 670px;
+      background-position: top 60px left 40px;
+      background-color: #d53c51;
+    }
+
+    &__title {
+      margin-bottom: 4px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      color: $dark-color;
+    }
+
+    &__subtitle {
+      margin: 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: $grey-color;
+    }
   }
 }

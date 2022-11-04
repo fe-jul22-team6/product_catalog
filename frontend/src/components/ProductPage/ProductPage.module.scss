@@ -1,4 +1,6 @@
 @import '../../utils/mixins.scss';
+@import '../../utils/vars.scss';
+
 .ProductPage {
   &__title {
     font-weight: 800;
@@ -6,6 +8,46 @@
 
     @include onTablet {
       font-size: 32px;
+    }
+  }
+
+  &__actions {
+    @include onTablet {
+      grid-column: 7 / 12;
+      margin-right: 24px;
+    }
+  }
+
+  &__capacity {
+    display: flex;
+    gap: 8px;
+
+    &_button {
+      font-family: 'Mont';
+      background-color: white;
+      border: 1px solid $light-color;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: uppercase;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $dark-color;
+        color: $light-color;
+      }
+
+      &:active {
+        background-color: $dark-color;
+        color: $light-color;
+      }
+
+      &:checked {
+        background-color: $dark-color;
+        color: $light-color;
+      }
     }
   }
 
@@ -22,7 +64,7 @@
       &::after {
         content: '';
         position: absolute;
-        border: 1px solid #E2E6E9;
+        border: 1px solid $light-color;
         bottom: -16px;
         left: 0;
         width: 100%;
@@ -38,7 +80,6 @@
       font-size: 16px;
       margin-top: 48px;
 
-
       @include onTablet {
         font-size: 20px;
       }
@@ -47,8 +88,7 @@
     &_text {
       font-weight: 600;
       font-size: 14px;
-      color: #89939A;
-
+      color: $grey-color;
     }
   }
 
@@ -67,7 +107,7 @@
       &::after {
         content: '';
         position: absolute;
-        border: 1px solid #E2E6E9;
+        border: 1px solid $light-color;
         bottom: -16px;
         left: 0;
         width: 100%;
@@ -77,9 +117,8 @@
     &_subtitle {
       font-weight: 500;
       font-size: 14px;
-      color: #89939A;
+      color: $grey-color;
       line-height: 21px;
-
     }
     &_text {
       font-weight: 600;
@@ -94,10 +133,83 @@
       margin: 8px 0;
     }
   }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+
+  }
+
+  &__cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    color: #fff;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    background: #216cff;
+    border: none;
+    border-radius: 8px;
+    margin-right: 8px;
+    transition: 300ms box-shadow;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+    }
+  }
+
+  &__favorite {
+    padding: 11px;
+    background: #fff;
+    border: 1px solid #b4bdc4;
+    border-radius: 48px;
+    transition: 300ms border;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $dark-color;
+    }
+  }
+
+    &__price {
+    display: flex;
+    margin: 10px 0 28px;
+    position: relative;
+    align-items: center;
+
+    &_old {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 28px;
+      text-decoration-line: line-through;
+      color: $grey-color;
+    }
+
+    &_new {
+      margin-right: 8px;
+      color: $dark-color;
+      font-weight: 800;
+      font-size: 32px;
+    }
+  }
 }
 
 .container {
   @include onDesktop {
+    display: grid;
+    gap: 64px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.tabletContainer {
+    @include onTablet {
     display: grid;
     gap: 64px;
     grid-template-columns: repeat(12, 1fr);

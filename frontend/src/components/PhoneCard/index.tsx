@@ -1,3 +1,1 @@
-import { PhoneCard } from './PhoneCard';
-
-export default PhoneCard;
+export * from './PhoneCard';

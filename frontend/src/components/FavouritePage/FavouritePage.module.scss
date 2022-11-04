@@ -1,4 +1,5 @@
 @import '../../utils/mixins.scss';
+@import '../../utils/vars.scss';
 
 .favourites {
   &__cards {
@@ -26,6 +27,6 @@
   &__count {
     margin-top: 12px;
     font-size: 14px;
-    color: #89939a;
+    color: $grey-color;
   }
 }

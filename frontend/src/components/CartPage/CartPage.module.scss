@@ -1,4 +1,5 @@
 @import '../../utils/mixins.scss';
+@import '../../utils/vars.scss';
 
 .cart {
   &__title {
@@ -6,7 +7,7 @@
     font-size: 32px;
     margin: 24px 0 32px;
     letter-spacing: -0.01em;
-    color: #0f0f11;
+    color: $dark-color;
 
     @include onTablet {
       font-weight: 800;
@@ -35,7 +36,7 @@
   &__item,
   &_checkout {
     grid-column: 1/5;
-    border: 1px solid #e2e6e9;
+    border: 1px solid $light-color;
     border-radius: 16px;
   }
 
@@ -98,14 +99,14 @@
       justify-content: center;
       width: 32px;
       height: 32px;
-      border: 1px solid #e2e6e9;
+      border: 1px solid $light-color;
       border-radius: 48px;
       font-size: 25px;
       cursor: pointer;
       transition: 300ms border;
 
       &:hover {
-        border: 1px solid #0f0f11;
+        border: 1px solid $dark-color;
       }
     }
 
@@ -155,9 +156,9 @@
     line-height: 21px;
     text-align: center;
     margin: 5px 20px 32px;
-    color: #89939a;
+    color: $grey-color;
     padding-bottom: 15px;
-    border-bottom: 1px solid #e2e6e9;
+    border-bottom: 1px solid $light-color;
   }
 
   &_button {
@@ -182,8 +183,7 @@
     margin-bottom: 70px;
     font-weight: 700;
     font-size: 14px;
-    line-height: 21px;
-    color: #89939a;
+    color: $grey-color;
     text-transform: uppercase;
     transition: 0.3s;
     text-decoration: none;
@@ -193,12 +193,12 @@
     }
 
     @include onTablet {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     @include onDesktop {
       margin-bottom: 0;
-      font-size: 28px;
+      font-size: 24px;
     }
   }
 }

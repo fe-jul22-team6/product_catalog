@@ -53,7 +53,14 @@ export const FooterLink: React.FC<PropsLink> = ({ to, text }) => {
 
 export const NavbarIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
   return (
-    <NavLink to={to} className={styles.icons__link}>
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        classNames(styles.icons__link, {
+          [styles.icons__link_is_active]: isActive,
+        })
+      }
+    >
       <img src={src} alt={alt} className={styles.icons__img} />
     </NavLink>
   );
@@ -61,7 +68,14 @@ export const NavbarIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
 
 export const NavbarMenuIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
   return (
-    <NavLink to={to} className={styles.menu__icons_link}>
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        classNames(styles.menu__icons_link, {
+          [styles.menu__icons_link_is_active]: isActive,
+        })
+      }
+    >
       <img src={src} alt={alt} className={styles.menu__icons_img} />
     </NavLink>
   );
