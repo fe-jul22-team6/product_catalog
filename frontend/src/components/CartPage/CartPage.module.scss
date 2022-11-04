@@ -26,19 +26,6 @@
       padding-bottom: 80px;
     }
   }
-
-  &__back_button {
-    display: flex;
-    cursor: pointer;
-    color: $grey-color;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover {
-      color: #000;
-    }
-  }
 }
 
 .photo {

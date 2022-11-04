@@ -1,0 +1,21 @@
+.navigation {
+  height: 15px;
+  margin-bottom: 36px;
+  display: flex;
+
+  &__home, &__next, &__back {
+    margin-right: 9px;
+  }
+
+  &__text {
+    margin-right: 9px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #89939a;
+    transition: 0.3s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
