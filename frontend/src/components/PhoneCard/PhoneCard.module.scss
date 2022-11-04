@@ -1,11 +1,16 @@
 @import '../../utils/vars.scss';
+@import '../../utils/mixins.scss';
 
 .card {
-  height: 506px;
+  height: 440px;
   border: 1px solid $light-color;
   border-radius: 8px;
   background: #fff;
 
+  @include onTablet {
+    height: 506px;
+  }
+ 
   &__content {
     display: flex;
     flex-direction: column;
@@ -14,8 +19,12 @@
 
   &__image {
     margin: 0 auto;
-    height: 200px;
+    height: 130px;
     margin-bottom: 24px;
+
+    @include onTablet {
+      height: 200px;
+    }
   }
 
   &__name {
