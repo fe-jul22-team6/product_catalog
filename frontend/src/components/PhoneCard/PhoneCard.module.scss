@@ -1,6 +1,7 @@
 @import '../../utils/vars.scss';
 
 .card {
+  height: 506px;
   border: 1px solid $light-color;
   border-radius: 8px;
   background: #fff;
@@ -18,6 +19,7 @@
   }
 
   &__name {
+    height: 36px;
     color: $dark-color;
     font-weight: 600;
     font-size: 14px;
