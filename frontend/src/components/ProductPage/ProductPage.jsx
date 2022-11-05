@@ -3,6 +3,7 @@ import favorite from '../../images/favorite.svg';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
+import { NavPage } from '../NavPage';
 
 export const ProductPage = () => {
   const [active, setActive] = useState('1');
@@ -13,6 +14,7 @@ export const ProductPage = () => {
 
   return (
     <div className="ProductPage">
+      <NavPage home={true} />
       <h1 className={styles.ProductPage__title}>Template Title</h1>
       <div className={styles.tabletContainer}>
         <section className={styles.ProductPage__photos}>

@@ -16,17 +16,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-type Props = {
-  phones: Phone[];
-};
-
-export const HomePage: React.FC<Props> = ({ phones }) => {
+export const HomePage: React.FC = () => {
+  const [phones, setPhones] = useState<Phone[]>([]);
   const [newPhones, setNewPhones] = useState<Phone[]>([]);
   const [hotPhones, setHotPhones] = useState<Phone[]>([]);
   const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
+
     phonesApi
       .getNew()
       .then(setNewPhones)
@@ -38,6 +37,8 @@ export const HomePage: React.FC<Props> = ({ phones }) => {
       .then(setHotPhones)
       .catch(() => setError(true))
       .finally(() => setIsLoading(false));
+
+    phonesApi.getAll().then(setPhones);
   }, []);
 
   const onTablet = useMediaQuery({
@@ -50,7 +51,7 @@ export const HomePage: React.FC<Props> = ({ phones }) => {
         <Loader />
       ) : error ? (
         <h1 className={styles.phones__title}>Something went wrong</h1>
-      ) : phones.length ? (
+      ) : newPhones.length || hotPhones.length ? (
         <div className={styles.phones__content}>
           <h1 className={styles.phones__title}>
             Welcome to Nice Gadgets store!

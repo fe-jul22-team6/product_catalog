@@ -38,7 +38,7 @@ export const NavPage: React.FC<Props> = ({ home }) => {
                 className={styles.navigation__text}
                 onClick={() => (index === 0 ? navigate(0) : navigate(-1))}
               >
-                {navItem}
+                {navItem[0].toUpperCase() + navItem.slice(1)}
               </span>
             </React.Fragment>
           ))}

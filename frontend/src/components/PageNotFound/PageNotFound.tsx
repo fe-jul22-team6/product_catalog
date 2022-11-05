@@ -1,1 +1,5 @@
-export const PageNotFound: React.FC = () => <h1>Page not found</h1>;
+import styles from './PageNotFound.module.scss';
+
+export const PageNotFound: React.FC = () => (
+  <h1 className={styles.title}>Page not found</h1>
+);
