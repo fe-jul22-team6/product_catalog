@@ -45,13 +45,12 @@ export const Header: React.FC = () => {
 
       <div className={styles.burger}>
         {location.pathname === '/menu' ? (
-          <NavLink to="/" className={styles.burger__link}>
-            <img
-              src={cross}
-              alt="cross"
-              className={styles.burger__img}
-              onClick={() => navigate(-1)}
-            />
+          <NavLink
+            to="/"
+            className={styles.burger__link}
+            onClick={() => navigate(-1)}
+          >
+            <img src={cross} alt="cross" className={styles.burger__img} />
           </NavLink>
         ) : (
           <NavLink to="/menu" className={styles.burger__link}>
