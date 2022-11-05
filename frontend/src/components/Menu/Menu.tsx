@@ -1,7 +1,9 @@
 import styles from './Menu.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { NavbarMenuLink } from '../NavbarLink/NavbarLink';
+import { NavbarMenuLink, NavbarMenuIcon } from '../NavbarLink/NavbarLink';
+import favorite from '../../images/favorite.svg';
+import cart from '../../images/cart.svg';
 
 export const Menu: React.FC = () => {
   const onTablet = useMediaQuery({
@@ -27,6 +29,10 @@ export const Menu: React.FC = () => {
             <NavbarMenuLink to="/accessories" text="Accessories" />
           </li>
         </ul>
+      </div>
+      <div className={styles.menu__icons}>
+        <NavbarMenuIcon to="/favorites" alt="favorites" src={favorite} />
+        <NavbarMenuIcon to="/cart" alt="cart" src={cart} />
       </div>
     </nav>
   ) : (
