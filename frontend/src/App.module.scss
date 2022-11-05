@@ -61,3 +61,15 @@ h1 {
     padding: 0 32px;
   }
 }
+
+.menu {
+  &__icons {
+    background: #fff;
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}

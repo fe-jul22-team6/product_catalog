@@ -180,7 +180,6 @@
   }
 
   &__link {
-    margin-bottom: 70px;
     font-weight: 700;
     font-size: 14px;
     color: $grey-color;
@@ -197,7 +196,6 @@
     }
 
     @include onDesktop {
-      margin-bottom: 0;
       font-size: 24px;
     }
   }
@@ -205,17 +203,16 @@
 
 .dialog {
   &__container {
+    margin-top: -50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @include onDesktop {
-      justify-content: space-around;
-      flex-direction: row;
-    }
+    justify-content: center;
+    row-gap: 20px;
+    height: 100%;
   }
 
   &__title {
-    margin: 30px auto 70px;
+    margin: 30px auto;
   }
 }

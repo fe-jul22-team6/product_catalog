@@ -12,11 +12,9 @@ export const PhonesPage: React.FC = () => {
   const [selectedAmount, setSelectedAmount] = useState(4);
   const [phones, setPhones] = useState<Phone[]>([]);
   const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
-
     phonesApi
       .getAll()
       .then(setPhones)

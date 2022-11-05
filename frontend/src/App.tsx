@@ -10,6 +10,9 @@ import { CartPage } from './components/CartPage';
 import { ProductPage } from './components/ProductPage';
 import styles from './App.module.scss';
 import './utils/swiper.scss';
+import { NavbarMenuIcon } from './components/NavbarLink/NavbarLink';
+import favorite from './images/favorite.svg';
+import cart from './images/cart.svg';
 
 export const App: React.FC = () => {
   const location = useLocation();
@@ -43,7 +46,14 @@ export const App: React.FC = () => {
         </div>
       </div>
 
-      {location.pathname !== '/menu' && <Footer />}
+      {location.pathname !== '/menu' ? (
+        <Footer />
+      ) : (
+        <div className={styles.menu__icons}>
+          <NavbarMenuIcon to="/favorites" alt="favorites" src={favorite} />
+          <NavbarMenuIcon to="/cart" alt="cart" src={cart} />
+        </div>
+      )}
     </>
   );
 };

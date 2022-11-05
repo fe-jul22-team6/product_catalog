@@ -21,11 +21,9 @@ export const HomePage: React.FC = () => {
   const [newPhones, setNewPhones] = useState<Phone[]>([]);
   const [hotPhones, setHotPhones] = useState<Phone[]>([]);
   const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
-
     phonesApi
       .getNew()
       .then(setNewPhones)

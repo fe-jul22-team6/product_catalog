@@ -85,7 +85,7 @@ export const CartPage: React.FC = () => {
               </div>
               <Dialog
                 PaperProps={{
-                  sx: { width: '40%', height: '40%' },
+                  sx: { width: '60%', height: '60%' },
                 }}
                 onClose={handleClose}
                 open={open}
