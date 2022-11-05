@@ -29,16 +29,18 @@ export const HomePage: React.FC = () => {
     phonesApi
       .getNew()
       .then(setNewPhones)
-      .catch(() => setError(true))
-      .finally(() => setIsLoading(false));
+      .catch(() => setError(true));
 
     phonesApi
       .getDiscound()
       .then(setHotPhones)
+      .catch(() => setError(true));
+
+    phonesApi
+      .getAll()
+      .then(setPhones)
       .catch(() => setError(true))
       .finally(() => setIsLoading(false));
-
-    phonesApi.getAll().then(setPhones);
   }, []);
 
   const onTablet = useMediaQuery({
@@ -51,7 +53,7 @@ export const HomePage: React.FC = () => {
         <Loader />
       ) : error ? (
         <h1 className={styles.phones__title}>Something went wrong</h1>
-      ) : newPhones.length || hotPhones.length ? (
+      ) : (
         <div className={styles.phones__content}>
           <h1 className={styles.phones__title}>
             Welcome to Nice Gadgets store!
@@ -163,8 +165,6 @@ export const HomePage: React.FC = () => {
             </Swiper>
           </div>
         </div>
-      ) : (
-        <h1 className={styles.phones__title}>No phones yet</h1>
       )}
     </section>
   );

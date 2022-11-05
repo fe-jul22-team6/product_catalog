@@ -34,7 +34,7 @@ export const PhonesPage: React.FC = () => {
         <Loader />
       ) : error ? (
         <h1 className={styles.phones__title}>Something went wrong</h1>
-      ) : phones.length ? (
+      ) : (
         <>
           <NavPage home={true} />
           <div className={styles.phones__content}>
@@ -54,8 +54,6 @@ export const PhonesPage: React.FC = () => {
             </div>
           </div>
         </>
-      ) : (
-        <h1 className={styles.phones__title}>No phones yet</h1>
       )}
     </section>
   );
