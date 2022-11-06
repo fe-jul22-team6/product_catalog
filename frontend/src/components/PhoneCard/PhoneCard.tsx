@@ -27,7 +27,7 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
     setFavoritePhones((prevPhones) => [...prevPhones, phone]);
   };
 
-  const handleRemoveToFavourite = () => {
+  const handleRemoveFromFavourite = () => {
     localStorage.setItem(
       'favoritePhones',
       JSON.stringify(favoritePhones.filter((item) => item.id !== id))
@@ -49,6 +49,17 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
     };
 
     setCartPhones((prevPhones) => [...prevPhones, newPhone]);
+  };
+
+  const handleRemoveFromCart = () => {
+    localStorage.setItem(
+      'cartPhones',
+      JSON.stringify(cartPhones.filter((item) => item.id !== id))
+    );
+
+    setCartPhones((prevPhones) =>
+      prevPhones.filter((prevPhone) => prevPhone.id !== id)
+    );
   };
 
   return (
@@ -78,18 +89,19 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
           </div>
         </div>
         <div className={styles.card__buttons}>
-          <button
-            className={classNames(styles.card__cart, {
-              [styles.card__cart_isActive]: cartPhones
-                .map(({ id }) => id)
-                .includes(id),
-            })}
-            onClick={handleAddToCart}
-          >
-            {!cartPhones.map(({ id }) => id).includes(id)
-              ? 'Add to cart'
-              : 'Added'}
-          </button>
+          {!cartPhones.map(({ id }) => id).includes(id) ? (
+            <button className={styles.card__cart} onClick={handleAddToCart}>
+              Add to cart
+            </button>
+          ) : (
+            <button
+              className={`${styles.card__cart} ${styles.card__cart_isActive}`}
+              onClick={handleRemoveFromCart}
+            >
+              Added
+            </button>
+          )}
+
           {!favoritePhones.map(({ id }) => id).includes(id) ? (
             <button
               className={styles.card__favorite}
@@ -100,7 +112,7 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
           ) : (
             <button
               className={styles.card__favorite}
-              onClick={handleRemoveToFavourite}
+              onClick={handleRemoveFromFavourite}
             >
               <img src={favoriteActive} alt="favorite" />
             </button>
