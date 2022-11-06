@@ -20,7 +20,11 @@
     max-height: 442px;
 
     &_img {
-      height: 100%;
+      height: 270px;
+
+      @include onTablet {
+        height: 440px;
+      }
     }
   }
 
