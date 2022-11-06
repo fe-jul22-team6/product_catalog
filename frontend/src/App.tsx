@@ -10,12 +10,27 @@ import { CartPage } from './components/CartPage';
 import { ProductPage } from './components/ProductPage';
 import styles from './App.module.scss';
 import './utils/swiper.scss';
+import { Phone } from '../../backend/src/types/Phone';
+import { useEffect, useState } from 'react';
+import Context from './types/Context';
 
 export const App: React.FC = () => {
   const location = useLocation();
+  const [favoritePhones, setFavoritePhones] = useState<Phone[]>([]);
+
+  useEffect(() => {
+    setFavoritePhones(
+      JSON.parse(localStorage.getItem('favoritePhones') || '[]')
+    );
+  }, []);
+
+  const value = {
+    favoritePhones,
+    setFavoritePhones,
+  };
 
   return (
-    <>
+    <Context.Provider value={value}>
       <Header />
 
       <div className={styles.section}>
@@ -36,7 +51,10 @@ export const App: React.FC = () => {
               element={<h1 className={styles.title}>No accessories yet</h1>}
             />
             <Route path="/menu" element={<Menu />} />
-            <Route path="/favorites" element={<FavouritePage />} />
+            <Route
+              path="/favorites"
+              element={<FavouritePage phones={favoritePhones} />}
+            />
             <Route path="/cart" element={<CartPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>{' '}
@@ -44,6 +62,6 @@ export const App: React.FC = () => {
       </div>
 
       {location.pathname !== '/menu' && <Footer />}
-    </>
+    </Context.Provider>
   );
 };

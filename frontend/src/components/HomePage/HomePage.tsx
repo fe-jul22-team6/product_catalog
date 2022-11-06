@@ -4,7 +4,6 @@ import { Loader } from '../Loader';
 import * as phonesApi from '../../api/phones';
 import { useEffect, useState } from 'react';
 import { Phone } from '../../../../backend/src/types/Phone';
-import favorite from '../../images/favorite.svg';
 import iphone14 from '../../images/banner-iphone14.png';
 import iphone14small from '../../images/banner-iphone14-small.png';
 import iphonesmall from '../../images/iphone-small.jpg';
@@ -102,7 +101,7 @@ export const HomePage: React.FC = () => {
             >
               {newPhones.map((phone) => (
                 <SwiperSlide>
-                  <PhoneCard phone={phone} likeImg={favorite} key={phone.id} />
+                  <PhoneCard phone={phone} key={phone.id} />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -157,7 +156,7 @@ export const HomePage: React.FC = () => {
             >
               {hotPhones.map((phone) => (
                 <SwiperSlide>
-                  <PhoneCard phone={phone} likeImg={favorite} key={phone.id} />
+                  <PhoneCard phone={phone} key={phone.id} />
                 </SwiperSlide>
               ))}
             </Swiper>

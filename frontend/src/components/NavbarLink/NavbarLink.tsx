@@ -11,6 +11,7 @@ type PropsIcon = {
   to: string;
   alt: string;
   src: string;
+  value: number;
 };
 
 export const NavbarLink: React.FC<PropsLink> = ({ to, text }) => {
@@ -51,22 +52,30 @@ export const FooterLink: React.FC<PropsLink> = ({ to, text }) => {
   );
 };
 
-export const NavbarIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
+export const NavbarIcon: React.FC<PropsIcon> = ({ to, alt, src, value }) => {
   return (
-    <NavLink
-      to={to}
-      className={({ isActive }) =>
-        classNames(styles.icons__link, {
-          [styles.icons__link_is_active]: isActive,
-        })
-      }
-    >
-      <img src={src} alt={alt} className={styles.icons__img} />
-    </NavLink>
+    <div className={styles.icons__container}>
+      <NavLink
+        to={to}
+        className={({ isActive }) =>
+          classNames(styles.icons__link, {
+            [styles.icons__link_is_active]: isActive,
+          })
+        }
+      >
+        <img src={src} alt={alt} className={styles.icons__img} />
+      </NavLink>
+      {!!value && <div className={styles.icons__counter}>{value}</div>}
+    </div>
   );
 };
 
-export const NavbarMenuIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
+export const NavbarMenuIcon: React.FC<PropsIcon> = ({
+  to,
+  alt,
+  src,
+  value,
+}) => {
   return (
     <NavLink
       to={to}
@@ -77,6 +86,7 @@ export const NavbarMenuIcon: React.FC<PropsIcon> = ({ to, alt, src }) => {
       }
     >
       <img src={src} alt={alt} className={styles.menu__icons_img} />
+      {!!value && <div className={styles.menu__icons_counter}>{value}</div>}
     </NavLink>
   );
 };

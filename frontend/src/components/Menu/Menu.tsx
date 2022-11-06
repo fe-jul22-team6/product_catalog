@@ -2,6 +2,8 @@ import styles from './Menu.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { NavbarMenuLink, NavbarMenuIcon } from '../NavbarLink/NavbarLink';
+import Context from '../../types/Context';
+import { useContext } from 'react';
 import favorite from '../../images/favorite.svg';
 import cart from '../../images/cart.svg';
 
@@ -11,6 +13,7 @@ export const Menu: React.FC = () => {
   });
 
   const navigate = useNavigate();
+  const { favoritePhones } = useContext(Context);
 
   return onTablet ? (
     <nav className={styles.menu}>
@@ -31,8 +34,13 @@ export const Menu: React.FC = () => {
         </ul>
       </div>
       <div className={styles.menu__icons}>
-        <NavbarMenuIcon to="/favorites" alt="favorites" src={favorite} />
-        <NavbarMenuIcon to="/cart" alt="cart" src={cart} />
+        <NavbarMenuIcon
+          to="/favorites"
+          alt="favorites"
+          src={favorite}
+          value={favoritePhones.length}
+        />
+        <NavbarMenuIcon to="/cart" alt="cart" src={cart} value={0} />
       </div>
     </nav>
   ) : (

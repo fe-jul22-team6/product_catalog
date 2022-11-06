@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './PaginateProducts.module.scss';
 import { Phone } from '../../../../backend/src/types/Phone';
-import favorite from '../../images/favorite.svg';
 import { PhoneCard } from '../PhoneCard';
 import Pagination from '@mui/material/Pagination';
 
@@ -12,6 +11,7 @@ type Props = {
 
 export const PaginateProducts: React.FC<Props> = ({ phones, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
+
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
   };
@@ -34,7 +34,7 @@ export const PaginateProducts: React.FC<Props> = ({ phones, itemsPerPage }) => {
     <div className={styles.pagination}>
       <div className={styles.pagination__cards}>
         {phones.slice(step, step + itemsPerPage).map((phone) => (
-          <PhoneCard phone={phone} likeImg={favorite} key={phone.id} />
+          <PhoneCard phone={phone} key={phone.id} />
         ))}
       </div>
       <Pagination
