@@ -4,6 +4,7 @@ import favoriteActive from '../../images/favorite-active.svg';
 import { Phone } from '../../../../backend/src/types/Phone';
 import Context from '../../types/Context';
 import { useContext, useEffect } from 'react';
+import classNames from 'classnames';
 
 type Props = {
   phone: Phone;
@@ -11,23 +12,52 @@ type Props = {
 
 export const PhoneCard: React.FC<Props> = ({ phone }) => {
   const { id, name, capacity, ram, screen, fullPrice, price, image } = phone;
-  const { favoritePhones, setFavoritePhones } = useContext(Context);
+  const { favoritePhones, cartPhones, setFavoritePhones, setCartPhones } =
+    useContext(Context);
 
   useEffect(() => {
     localStorage.setItem('favoritePhones', JSON.stringify(favoritePhones));
   }, [favoritePhones]);
 
-  const handleAdd = () => {
+  useEffect(() => {
+    localStorage.setItem('cartPhones', JSON.stringify(cartPhones));
+  }, [cartPhones]);
+
+  const handleAddToFavourite = () => {
     setFavoritePhones((prevPhones) => [...prevPhones, phone]);
   };
 
-  const handleRemove = () => {
+  const handleRemoveFromFavourite = () => {
     localStorage.setItem(
       'favoritePhones',
       JSON.stringify(favoritePhones.filter((item) => item.id !== id))
     );
 
     setFavoritePhones((prevPhones) =>
+      prevPhones.filter((prevPhone) => prevPhone.id !== id)
+    );
+  };
+
+  const handleAddToCart = () => {
+    if (cartPhones.map(({ id }) => id).includes(id)) {
+      return;
+    }
+
+    const newPhone = {
+      ...phone,
+      amount: 1,
+    };
+
+    setCartPhones((prevPhones) => [...prevPhones, newPhone]);
+  };
+
+  const handleRemoveFromCart = () => {
+    localStorage.setItem(
+      'cartPhones',
+      JSON.stringify(cartPhones.filter((item) => item.id !== id))
+    );
+
+    setCartPhones((prevPhones) =>
       prevPhones.filter((prevPhone) => prevPhone.id !== id)
     );
   };
@@ -59,13 +89,31 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
           </div>
         </div>
         <div className={styles.card__buttons}>
-          <button className={styles.card__cart}>Add to cart</button>
+          {!cartPhones.map(({ id }) => id).includes(id) ? (
+            <button className={styles.card__cart} onClick={handleAddToCart}>
+              Add to cart
+            </button>
+          ) : (
+            <button
+              className={`${styles.card__cart} ${styles.card__cart_isActive}`}
+              onClick={handleRemoveFromCart}
+            >
+              Added
+            </button>
+          )}
+
           {!favoritePhones.map(({ id }) => id).includes(id) ? (
-            <button className={styles.card__favorite} onClick={handleAdd}>
+            <button
+              className={styles.card__favorite}
+              onClick={handleAddToFavourite}
+            >
               <img src={favorite} alt="favorite" />
             </button>
           ) : (
-            <button className={styles.card__favorite} onClick={handleRemove}>
+            <button
+              className={styles.card__favorite}
+              onClick={handleRemoveFromFavourite}
+            >
               <img src={favoriteActive} alt="favorite" />
             </button>
           )}

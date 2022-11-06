@@ -13,7 +13,7 @@ import Context from '../../types/Context';
 export const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { favoritePhones } = useContext(Context);
+  const { favoritePhones, cartPhones } = useContext(Context);
 
   return (
     <header className={styles.header}>
@@ -48,7 +48,12 @@ export const Header: React.FC = () => {
           src={favorite}
           value={favoritePhones.length}
         />
-        <NavbarIcon to="/cart" alt="cart" src={cart} value={0} />
+        <NavbarIcon
+          to="/cart"
+          alt="cart"
+          src={cart}
+          value={cartPhones.length}
+        />
       </div>
 
       <div className={styles.burger}>

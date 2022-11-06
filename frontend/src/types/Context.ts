@@ -5,7 +5,9 @@ type callBack = (prevPhones: Phone[]) => Phone[];
 
 interface ContextState {
   favoritePhones: Phone[];
+  cartPhones: Phone[];
   setFavoritePhones: (callback: callBack) => void;
+  setCartPhones: (callback: callBack) => void;
 }
 
 export default React.createContext<ContextState>({} as ContextState);

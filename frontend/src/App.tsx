@@ -17,16 +17,21 @@ import Context from './types/Context';
 export const App: React.FC = () => {
   const location = useLocation();
   const [favoritePhones, setFavoritePhones] = useState<Phone[]>([]);
+  const [cartPhones, setCartPhones] = useState<Phone[]>([]);
 
   useEffect(() => {
     setFavoritePhones(
       JSON.parse(localStorage.getItem('favoritePhones') || '[]')
     );
+
+    setCartPhones(JSON.parse(localStorage.getItem('cartPhones') || '[]'));
   }, []);
 
   const value = {
     favoritePhones,
+    cartPhones,
     setFavoritePhones,
+    setCartPhones,
   };
 
   return (

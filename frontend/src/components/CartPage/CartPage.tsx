@@ -1,52 +1,72 @@
-import back from '../../images/back.svg';
 import cross from '../../images/cross.svg';
 import styles from './CartPage.module.scss';
-import * as phonesApi from '../../api/phones';
-import { useEffect, useState } from 'react';
-import { Phone } from '../../../../backend/src/types/Phone';
+import { useState, useContext } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
-import { Loader } from '../Loader';
 import { NavLink } from 'react-router-dom';
 import { NavPage } from '../NavPage';
+import Context from '../../types/Context';
+import { Phone } from '../../../../backend/src/types/Phone';
 
 export const CartPage: React.FC = () => {
-  const [phones, setPhones] = useState<Phone[]>([]);
   const [open, setOpen] = useState(false);
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const { cartPhones, setCartPhones } = useContext(Context);
 
-  useEffect(() => {
-    phonesApi
-      .getAll()
-      .then((phones: Phone[]) => setPhones(phones.slice(0, 5)))
-      .catch(() => setError(true))
-      .finally(() => setIsLoading(false));
-  }, []);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+
+    localStorage.removeItem('cartPhones');
+
+    setCartPhones((prevPhones) => []);
+  };
 
   const handleDelete = (id: string) => {
-    setPhones(phones.filter((phone) => phone.id !== id));
+    localStorage.setItem(
+      'cartPhones',
+      JSON.stringify(cartPhones.filter((item) => item.id !== id))
+    );
+
+    setCartPhones((prevPhones) =>
+      prevPhones.filter((prevPhone) => prevPhone.id !== id)
+    );
+  };
+
+  const handleIncrease = (phone: Phone) => {
+    phone.amount++;
+
+    localStorage.setItem('cartPhones', JSON.stringify(cartPhones));
+
+    setCartPhones((prevPhones) => [...prevPhones]);
+  };
+
+  const handleDecrease = (phone: Phone) => {
+    if (phone.amount - 1 === 0) {
+      return;
+    }
+
+    phone.amount--;
+
+    localStorage.setItem('cartPhones', JSON.stringify(cartPhones));
+
+    setCartPhones((prevPhones) => [...prevPhones]);
   };
 
   return (
     <section className={styles.cart}>
-      {isLoading ? (
-        <Loader />
-      ) : error ? (
-        <h1 className={styles.cart__title}>Something went wrong</h1>
-      ) : phones.length ? (
+      {cartPhones.length ? (
         <>
           <NavPage home={false} />
           <h1 className={styles.cart__title}>Cart</h1>
           <div className={styles.cart__product_list}>
-            {phones.map(({ id, name, price, image }) => (
-              <div className={styles.product_list__item} key={id}>
+            {cartPhones.map((phone) => (
+              <div className={styles.product_list__item} key={phone.id}>
                 <div className={styles.item_information}>
                   <button
                     className={styles.item__delete}
-                    onClick={() => handleDelete(id)}
+                    onClick={() => handleDelete(phone.id)}
                   >
                     <img
                       src={cross}
@@ -56,29 +76,41 @@ export const CartPage: React.FC = () => {
                   </button>
                   <div className={styles.item__photo}>
                     <img
-                      src={`https://fast-shelf-97147.herokuapp.com/static/${image}`}
+                      src={`https://fast-shelf-97147.herokuapp.com/static/${phone.image}`}
                       alt=""
                       className={styles.photo}
                     />
                   </div>
-                  <p className={styles.item__title}>{name}</p>
+                  <p className={styles.item__title}>{phone.name}</p>
                 </div>
                 <div className={styles.item_other_info}>
                   <div className={styles.item__quantity}>
-                    <span className={styles.item__quantity_counter}>-</span>
-                    <span className={styles.item__quantity_count}>1</span>
-                    <span className={styles.item__quantity_counter}>+</span>
+                    <span
+                      className={styles.item__quantity_counter}
+                      onClick={() => handleDecrease(phone)}
+                    >
+                      -
+                    </span>
+                    <span className={styles.item__quantity_count}>
+                      {phone.amount}
+                    </span>
+                    <span
+                      className={styles.item__quantity_counter}
+                      onClick={() => handleIncrease(phone)}
+                    >
+                      +
+                    </span>
                   </div>
-                  <p className={styles.item__price}>${price}</p>
+                  <p className={styles.item__price}>${phone.price}</p>
                 </div>
               </div>
             ))}
             <div className={styles.product_list_checkout}>
               <h3 className={styles.checkout_total}>
-                ${phones.reduce((a, b) => a + b.price, 0)}
+                ${cartPhones.reduce((a, b) => a + b.price * b.amount, 0)}
               </h3>
               <p className={styles.checkout_count}>
-                Total for {phones.length} items
+                Total for {cartPhones.length} items
               </p>
               <div onClick={handleOpen} className={styles.checkout_button}>
                 Checkout
@@ -95,7 +127,7 @@ export const CartPage: React.FC = () => {
                 <h3 className={`${styles.cart__title} ${styles.dialog__title}`}>
                   Checkout
                 </h3>
-                <div className={styles.dialog__container}>
+                <div className={styles.dialog__container} onClick={handleClose}>
                   <NavLink to="/home" className={styles.checkout__link}>
                     To Home page
                   </NavLink>
