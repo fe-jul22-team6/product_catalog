@@ -7,10 +7,13 @@ import menu from '../../images/burger.svg';
 import cross from '../../images/cross.svg';
 import cart from '../../images/cart.svg';
 import { NavbarLink, NavbarIcon } from '../NavbarLink/NavbarLink';
+import { useContext } from 'react';
+import Context from '../../types/Context';
 
 export const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { favoritePhones } = useContext(Context);
 
   return (
     <header className={styles.header}>
@@ -39,8 +42,13 @@ export const Header: React.FC = () => {
       </nav>
 
       <div className={styles.icons}>
-        <NavbarIcon to="/favorites" alt="favorites" src={favorite} />
-        <NavbarIcon to="/cart" alt="cart" src={cart} />
+        <NavbarIcon
+          to="/favorites"
+          alt="favorites"
+          src={favorite}
+          value={favoritePhones.length}
+        />
+        <NavbarIcon to="/cart" alt="cart" src={cart} value={0} />
       </div>
 
       <div className={styles.burger}>

@@ -1,15 +1,36 @@
 import styles from './PhoneCard.module.scss';
-// import favorite from '../../images/favorite.svg';
-// import favoriteActive from '../../images/favorite-active.svg';
+import favorite from '../../images/favorite.svg';
+import favoriteActive from '../../images/favorite-active.svg';
 import { Phone } from '../../../../backend/src/types/Phone';
+import Context from '../../types/Context';
+import { useContext, useEffect } from 'react';
 
 type Props = {
   phone: Phone;
-  likeImg?: string;
 };
 
-export const PhoneCard: React.FC<Props> = ({ phone, likeImg }) => {
-  const { name, capacity, ram, screen, fullPrice, price, image } = phone;
+export const PhoneCard: React.FC<Props> = ({ phone }) => {
+  const { id, name, capacity, ram, screen, fullPrice, price, image } = phone;
+  const { favoritePhones, setFavoritePhones } = useContext(Context);
+
+  useEffect(() => {
+    localStorage.setItem('favoritePhones', JSON.stringify(favoritePhones));
+  }, [favoritePhones]);
+
+  const handleAdd = () => {
+    setFavoritePhones((prevPhones) => [...prevPhones, phone]);
+  };
+
+  const handleRemove = () => {
+    localStorage.setItem(
+      'favoritePhones',
+      JSON.stringify(favoritePhones.filter((item) => item.id !== id))
+    );
+
+    setFavoritePhones((prevPhones) =>
+      prevPhones.filter((prevPhone) => prevPhone.id !== id)
+    );
+  };
 
   return (
     <section className={styles.card}>
@@ -39,9 +60,15 @@ export const PhoneCard: React.FC<Props> = ({ phone, likeImg }) => {
         </div>
         <div className={styles.card__buttons}>
           <button className={styles.card__cart}>Add to cart</button>
-          <button className={styles.card__favorite}>
-            <img src={likeImg} alt="favorite" />
-          </button>
+          {!favoritePhones.map(({ id }) => id).includes(id) ? (
+            <button className={styles.card__favorite} onClick={handleAdd}>
+              <img src={favorite} alt="favorite" />
+            </button>
+          ) : (
+            <button className={styles.card__favorite} onClick={handleRemove}>
+              <img src={favoriteActive} alt="favorite" />
+            </button>
+          )}
         </div>
       </div>
     </section>
