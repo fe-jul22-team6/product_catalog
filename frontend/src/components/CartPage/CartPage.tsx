@@ -10,9 +10,18 @@ import { Phone } from '../../../../backend/src/types/Phone';
 
 export const CartPage: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   const { cartPhones, setCartPhones } = useContext(Context);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+
+    localStorage.removeItem('cartPhones');
+
+    setCartPhones((prevPhones) => []);
+  };
 
   const handleDelete = (id: string) => {
     localStorage.setItem(
@@ -118,7 +127,7 @@ export const CartPage: React.FC = () => {
                 <h3 className={`${styles.cart__title} ${styles.dialog__title}`}>
                   Checkout
                 </h3>
-                <div className={styles.dialog__container}>
+                <div className={styles.dialog__container} onClick={handleClose}>
                   <NavLink to="/home" className={styles.checkout__link}>
                     To Home page
                   </NavLink>

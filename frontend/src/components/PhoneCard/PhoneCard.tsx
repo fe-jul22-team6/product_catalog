@@ -4,6 +4,7 @@ import favoriteActive from '../../images/favorite-active.svg';
 import { Phone } from '../../../../backend/src/types/Phone';
 import Context from '../../types/Context';
 import { useContext, useEffect } from 'react';
+import classNames from 'classnames';
 
 type Props = {
   phone: Phone;
@@ -39,14 +40,6 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
 
   const handleAddToCart = () => {
     if (cartPhones.map(({ id }) => id).includes(id)) {
-      const foundPhone = cartPhones.findIndex(
-        (cartPhone) => cartPhone.id === id
-      );
-
-      cartPhones[foundPhone].amount++;
-
-      setCartPhones((prevPhones) => [...prevPhones]);
-
       return;
     }
 
@@ -85,8 +78,17 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
           </div>
         </div>
         <div className={styles.card__buttons}>
-          <button className={styles.card__cart} onClick={handleAddToCart}>
-            Add to cart
+          <button
+            className={classNames(styles.card__cart, {
+              [styles.card__cart_isActive]: cartPhones
+                .map(({ id }) => id)
+                .includes(id),
+            })}
+            onClick={handleAddToCart}
+          >
+            {!cartPhones.map(({ id }) => id).includes(id)
+              ? 'Add to cart'
+              : 'Added'}
           </button>
           {!favoritePhones.map(({ id }) => id).includes(id) ? (
             <button
