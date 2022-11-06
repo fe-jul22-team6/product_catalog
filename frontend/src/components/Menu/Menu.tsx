@@ -13,7 +13,7 @@ export const Menu: React.FC = () => {
   });
 
   const navigate = useNavigate();
-  const { favoritePhones } = useContext(Context);
+  const { favoritePhones, cartPhones } = useContext(Context);
 
   return onTablet ? (
     <nav className={styles.menu}>
@@ -40,7 +40,12 @@ export const Menu: React.FC = () => {
           src={favorite}
           value={favoritePhones.length}
         />
-        <NavbarMenuIcon to="/cart" alt="cart" src={cart} value={0} />
+        <NavbarMenuIcon
+          to="/cart"
+          alt="cart"
+          src={cart}
+          value={cartPhones.length}
+        />
       </div>
     </nav>
   ) : (

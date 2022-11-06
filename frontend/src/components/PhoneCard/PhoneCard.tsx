@@ -11,17 +11,22 @@ type Props = {
 
 export const PhoneCard: React.FC<Props> = ({ phone }) => {
   const { id, name, capacity, ram, screen, fullPrice, price, image } = phone;
-  const { favoritePhones, setFavoritePhones } = useContext(Context);
+  const { favoritePhones, cartPhones, setFavoritePhones, setCartPhones } =
+    useContext(Context);
 
   useEffect(() => {
     localStorage.setItem('favoritePhones', JSON.stringify(favoritePhones));
   }, [favoritePhones]);
 
-  const handleAdd = () => {
+  useEffect(() => {
+    localStorage.setItem('cartPhones', JSON.stringify(cartPhones));
+  }, [cartPhones]);
+
+  const handleAddToFavourite = () => {
     setFavoritePhones((prevPhones) => [...prevPhones, phone]);
   };
 
-  const handleRemove = () => {
+  const handleRemoveToFavourite = () => {
     localStorage.setItem(
       'favoritePhones',
       JSON.stringify(favoritePhones.filter((item) => item.id !== id))
@@ -30,6 +35,27 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
     setFavoritePhones((prevPhones) =>
       prevPhones.filter((prevPhone) => prevPhone.id !== id)
     );
+  };
+
+  const handleAddToCart = () => {
+    if (cartPhones.map(({ id }) => id).includes(id)) {
+      const foundPhone = cartPhones.findIndex(
+        (cartPhone) => cartPhone.id === id
+      );
+
+      cartPhones[foundPhone].amount++;
+
+      setCartPhones((prevPhones) => [...prevPhones]);
+
+      return;
+    }
+
+    const newPhone = {
+      ...phone,
+      amount: 1,
+    };
+
+    setCartPhones((prevPhones) => [...prevPhones, newPhone]);
   };
 
   return (
@@ -59,13 +85,21 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
           </div>
         </div>
         <div className={styles.card__buttons}>
-          <button className={styles.card__cart}>Add to cart</button>
+          <button className={styles.card__cart} onClick={handleAddToCart}>
+            Add to cart
+          </button>
           {!favoritePhones.map(({ id }) => id).includes(id) ? (
-            <button className={styles.card__favorite} onClick={handleAdd}>
+            <button
+              className={styles.card__favorite}
+              onClick={handleAddToFavourite}
+            >
               <img src={favorite} alt="favorite" />
             </button>
           ) : (
-            <button className={styles.card__favorite} onClick={handleRemove}>
+            <button
+              className={styles.card__favorite}
+              onClick={handleRemoveToFavourite}
+            >
               <img src={favoriteActive} alt="favorite" />
             </button>
           )}
