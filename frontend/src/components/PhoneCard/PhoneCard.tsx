@@ -4,7 +4,6 @@ import favoriteActive from '../../images/favorite-active.svg';
 import { Phone } from '../../../../backend/src/types/Phone';
 import Context from '../../types/Context';
 import { useContext, useEffect } from 'react';
-import classNames from 'classnames';
 
 type Props = {
   phone: Phone;

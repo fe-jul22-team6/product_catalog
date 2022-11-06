@@ -2,7 +2,6 @@ import cross from '../../images/cross.svg';
 import styles from './CartPage.module.scss';
 import { useState, useContext } from 'react';
 import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
 import { NavLink } from 'react-router-dom';
 import { NavPage } from '../NavPage';
 import Context from '../../types/Context';
@@ -15,6 +14,7 @@ export const CartPage: React.FC = () => {
   const handleOpen = () => {
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
 
@@ -117,19 +117,23 @@ export const CartPage: React.FC = () => {
               </div>
               <Dialog
                 PaperProps={{
-                  sx: { width: '60%', height: '60%' },
+                  sx: { width: '60%', height: '70%' },
                 }}
-                onClose={handleClose}
+                onClose={() => setOpen(false)}
                 open={open}
                 className={styles.dialog}
-                maxWidth={false}
+                maxWidth={'sm'}
               >
                 <h3 className={`${styles.cart__title} ${styles.dialog__title}`}>
                   Checkout
                 </h3>
-                <div className={styles.dialog__container} onClick={handleClose}>
-                  <NavLink to="/home" className={styles.checkout__link}>
-                    To Home page
+                <div className={styles.dialog__container}>
+                  <NavLink
+                    to="/home"
+                    className={styles.checkout__link}
+                    onClick={handleClose}
+                  >
+                    Purchase
                   </NavLink>
                   <NavLink to="/phones" className={styles.checkout__link}>
                     Continue shopping
