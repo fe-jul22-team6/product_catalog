@@ -163,7 +163,8 @@
   }
 }
 
-.menu__icons_counter, .icons__counter {
+.menu__icons_counter,
+.icons__counter {
   position: absolute;
   top: 24%;
   left: 50%;
@@ -174,8 +175,8 @@
   line-height: 14px;
   text-align: center;
 
-  color: #FFFFFF;
-  background: #F447AF;
-  border: 1px solid #FFFFFF;
+  color: #ffffff;
+  background: #f447af;
+  border: 1px solid #ffffff;
   border-radius: 50%;
 }
