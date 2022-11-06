@@ -1,5 +1,18 @@
 # Product catalog
-- [DEMO LINK](https://fe-jul22-team6.github.io/product_catalog/)
+- [Preview Link](https://fe-jul22-team6.github.io/product_catalog/)
+- [Design](https://www.figma.com/file/FRxncC4lfyhs6og1L6FGEU/Phone-catalog-(V2)-Rounded-Style-2?node-id=15870%3A2026)
+
+Site is developed for:
+
+mobile screens: >320px;
+tablets: >640px;
+desktop: >1200px;
+Technologies used:
+
+React.js
+JavaScript, TypeScript
+Node.js, Express.js
+HTML, CSS, SASS
 
 # Get the initial code
 1. Clone the repo
