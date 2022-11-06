@@ -4,15 +4,16 @@
 
 Site is developed for:
 
-mobile screens: >320px;
-tablets: >640px;
-desktop: >1200px;
+- mobile screens: >320px;
+- tablets: >640px;
+- desktop: >1200px;
+
 Technologies used:
 
-React.js
-JavaScript, TypeScript
-Node.js, Express.js
-HTML, CSS, SASS
+- React.js
+- JavaScript, TypeScript
+- Node.js, Express.js
+- HTML, CSS, SASS
 
 # Get the initial code
 1. Clone the repo
