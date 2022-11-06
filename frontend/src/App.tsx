@@ -57,7 +57,7 @@ export const App: React.FC = () => {
             />
             <Route path="/cart" element={<CartPage />} />
             <Route path="*" element={<PageNotFound />} />
-          </Routes>{' '}
+          </Routes>
         </div>
       </div>
 
