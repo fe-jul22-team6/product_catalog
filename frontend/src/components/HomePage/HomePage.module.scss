@@ -26,7 +26,7 @@
     width: 320px;
 
     @include onTablet {
-      width: 600px;
+      width: 550px;
       margin-bottom: 74px;
     }
 
@@ -40,7 +40,7 @@
       border-radius: 4px;
 
       @include onTablet {
-        height: 230px;
+        height: 220px;
       }
 
       @include onDesktop {

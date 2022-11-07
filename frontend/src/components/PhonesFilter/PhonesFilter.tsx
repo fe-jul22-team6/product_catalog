@@ -67,7 +67,7 @@ export const PhonesFilter: React.FC<Props> = ({
           value={selectedSort}
           onChange={(event) => setSelectedSort(event.target.value)}
         >
-          <option value={SortBy.noFilterSelected}>By default</option>
+          <option value={SortBy.noFilterSelected}>Default</option>
           <option value={SortBy.Newest}>Newest</option>
           <option value={SortBy.LowPrice}>Price Low to High</option>
           <option value={SortBy.HighPrice}>Price High to Low</option>

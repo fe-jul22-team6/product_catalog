@@ -1,7 +1,10 @@
 @import '../../utils/vars.scss';
 
 .menu {
-  height: calc(100vh - 85px);
+  position: relative;
+  height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
 
   &__list {
     display: flex;
@@ -14,15 +17,5 @@
 
   &__item {
     margin-bottom: 32px;
-  }
-
-  &__icons {
-    background: #fff;
-    display: flex;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
   }
 }

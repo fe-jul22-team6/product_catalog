@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
   width: 14px;
@@ -10,4 +12,52 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+}
+
+.swiper-buttons {
+  display: none;
+  position: relative;
+  z-index: 0;
+
+  @include onTablet {
+    display: block;
+    width: 650px;
+    bottom: 205px;
+    right: 50px;
+  }
+
+  @include onDesktop {
+    bottom: 385px;
+    right: 60px;
+    width: 1160px;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  border: 1px solid #B4BDC4;
+  border-radius: 48px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    height: 220px;
+  }
+
+  @include onDesktop {
+    height: 400px;
+  }
+}
+
+.swiper-button-prev {
+  background-image: url(./../images/back.svg);
+}
+
+.swiper-button-next {
+  background-image: url(./../images/next-black.svg);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: '';
 }

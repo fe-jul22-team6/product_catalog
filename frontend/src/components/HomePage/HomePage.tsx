@@ -61,9 +61,14 @@ export const HomePage: React.FC = () => {
               spaceBetween={16}
               slidesPerView={1}
               modules={[Pagination, Navigation]}
+              loop={true}
               pagination={{
                 clickable: true,
                 el: '.swiper-custom-pagination',
+              }}
+              navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
               }}
             >
               <SwiperSlide>
@@ -86,6 +91,10 @@ export const HomePage: React.FC = () => {
                 />
               </SwiperSlide>
             </Swiper>
+            <div className="swiper-buttons">
+              <div className="swiper-button-prev" />
+              <div className="swiper-button-next" />
+            </div>
             <div className="swiper-custom-pagination" />
           </div>
 
