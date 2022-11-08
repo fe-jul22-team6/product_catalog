@@ -1,5 +1,6 @@
 @import '../../utils/mixins.scss';
 @import '../../utils/vars.scss';
+@import '../../utils/extends.scss';
 
 .header {
   position: sticky;
@@ -38,9 +39,8 @@
   display: flex;
 
   &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    @extend %list;
+
     display: none;
 
     @include onTablet {
@@ -66,8 +66,9 @@
   }
 
   &__link {
+    @extend %shadowline;
+
     display: flex;
-    box-shadow: -1px 0px 0px $light-color;
     padding: 17px;
   }
 }
@@ -80,8 +81,9 @@
   }
 
   &__link {
+    @extend %shadowline;
+
     display: flex;
-    box-shadow: -1px 0px 0px $light-color;
 
     @include onTablet {
       padding: 16px;

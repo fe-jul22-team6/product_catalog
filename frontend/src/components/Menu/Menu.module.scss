@@ -1,18 +1,15 @@
 @import '../../utils/vars.scss';
+@import '../../utils/extends.scss';
 
 .menu {
-  position: relative;
   height: calc(100vh - 150px);
-  display: flex;
-  flex-direction: column;
 
   &__list {
+    @extend %list;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
 
   &__item {

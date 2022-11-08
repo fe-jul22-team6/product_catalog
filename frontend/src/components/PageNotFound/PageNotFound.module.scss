@@ -1,10 +1,6 @@
 @import '../../utils/mixins.scss';
+@import '../../utils/extends.scss';
 
 .title {
-  font-weight: 800;
-  font-size: 32px;
-
-  @include onTablet {
-    font-size: 48px;
-  }
+  @extend %title;
 }

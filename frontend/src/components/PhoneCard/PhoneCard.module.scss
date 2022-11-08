@@ -1,5 +1,6 @@
 @import '../../utils/vars.scss';
 @import '../../utils/mixins.scss';
+@import '../../utils/extends.scss';
 
 .card {
   height: 440px;
@@ -28,10 +29,10 @@
   }
 
   &__name {
+    @extend %title-small;
+
     height: 36px;
     color: $dark-color;
-    font-weight: 600;
-    font-size: 14px;
   }
 
   &__price {
@@ -42,7 +43,6 @@
     &_old {
       font-weight: 600;
       font-size: 22px;
-      line-height: 28px;
       text-decoration-line: line-through;
       color: $grey-color;
     }
@@ -76,14 +76,12 @@
     &_title {
       font-weight: 700;
       font-size: 12px;
-      line-height: 15px;
       color: $grey-color;
     }
 
     &_value {
       font-weight: 700;
       font-size: 12px;
-      line-height: 15px;
       color: $dark-color;
     }
   }
@@ -95,15 +93,14 @@
   }
 
   &__cart {
+    @extend %title-small;
+
     display: flex;
     align-items: center;
     justify-content: center;
     width: 75%;
     color: #fff;
     font-family: 'Mont';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
     text-decoration: none;
     background: #216cff;
     border: none;
@@ -119,7 +116,7 @@
     &_isActive {
       color: #216cff;
       background-color: white;
-      border: 1px solid #e2e6e9;
+      border: 1px solid $light-color;
       border-radius: 8px;
     }
   }

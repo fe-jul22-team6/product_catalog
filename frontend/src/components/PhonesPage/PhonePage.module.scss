@@ -1,15 +1,10 @@
 @import '../../utils/mixins.scss';
 @import '../../utils/vars.scss';
+@import '../../utils/extends.scss';
 
 .phones {
   &__title {
-    margin: 0;
-    font-weight: 800;
-    font-size: 32px;
-
-    @include onTablet {
-      font-size: 48px;
-    }
+    @extend %title;
   }
 
   &__count {

@@ -1,16 +1,16 @@
 @import '../../utils/mixins.scss';
 @import '../../utils/vars.scss';
+@import '../../utils/extends.scss';
 
 .cart {
   &__title {
-    font-weight: 800;
-    font-size: 32px;
+    @extend %title;
+
     margin-bottom: 32px;
     color: $dark-color;
 
     @include onTablet {
       font-weight: 800;
-      font-size: 48px;
     }
   }
 
@@ -79,7 +79,6 @@
     font-style: normal;
     font-weight: 800;
     font-size: 22px;
-    line-height: 140%;
   }
 
   &__quantity {
@@ -109,18 +108,14 @@
     }
 
     &_count {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
+      @extend %title-small;
+
       padding: 0 14px;
     }
   }
 
   &__title {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 21px;
+    @extend %title-small;
 
     padding: 0 16px;
   }
@@ -143,15 +138,13 @@
   &_total {
     font-weight: 800;
     font-size: 32px;
-    line-height: 41px;
     text-align: center;
     margin: 20px 0 0;
   }
 
   &_count {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 21px;
+    @extend %title-small;
+ 
     text-align: center;
     margin: 5px 20px 32px;
     color: $grey-color;
@@ -160,9 +153,8 @@
   }
 
   &_button {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 21px;
+    @extend %title-small;
+
     color: #fff;
     background: #216cff;
     border-radius: 8px;

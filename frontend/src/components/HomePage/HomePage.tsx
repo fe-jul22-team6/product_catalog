@@ -87,7 +87,6 @@ export const HomePage: React.FC = () => {
                   }
                   alt="phones banner"
                   className={styles.phones__banner_img}
-                  style={{ borderRadius: '8px' }}
                 />
               </SwiperSlide>
             </Swiper>

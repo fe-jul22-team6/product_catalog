@@ -1,4 +1,5 @@
 @import './utils/mixins.scss';
+@import './utils/extends.scss';
 
 @font-face {
   font-family: Mont;
@@ -26,12 +27,7 @@ h1 {
 }
 
 .title {
-  font-weight: 800;
-  font-size: 32px;
-
-  @include onTablet {
-    font-size: 48px;
-  }
+  @extend %title;
 }
 
 .section {
@@ -49,17 +45,7 @@ h1 {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-
-  @include onTablet {
-    padding: 0 24px;
-  }
-
-  @include onDesktop {
-    padding: 0 32px;
-  }
+  @extend %container;
 }
 
 .menu {
