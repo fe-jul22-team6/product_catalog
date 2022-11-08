@@ -6,7 +6,7 @@
   &__title {
     @extend %title;
 
-    margin-bottom: 32px;
+    padding-bottom: 32px;
     color: $dark-color;
 
     @include onTablet {
