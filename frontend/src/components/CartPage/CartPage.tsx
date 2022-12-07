@@ -35,6 +35,10 @@ export const CartPage: React.FC = () => {
   };
 
   const handleIncrease = (phone: Phone) => {
+    if (!phone.amount) {
+      return;
+    }
+
     phone.amount++;
 
     localStorage.setItem('cartPhones', JSON.stringify(cartPhones));
@@ -43,6 +47,10 @@ export const CartPage: React.FC = () => {
   };
 
   const handleDecrease = (phone: Phone) => {
+    if (!phone.amount) {
+      return;
+    }
+
     if (phone.amount - 1 === 0) {
       return;
     }
@@ -76,7 +84,7 @@ export const CartPage: React.FC = () => {
                   </button>
                   <div className={styles.item__photo}>
                     <img
-                      src={`https://fast-shelf-97147.herokuapp.com/static/${phone.image}`}
+                      src={`https://product-catalog-8d6r.onrender.com/static/${phone.image}`}
                       alt=""
                       className={styles.photo}
                     />
@@ -107,7 +115,14 @@ export const CartPage: React.FC = () => {
             ))}
             <div className={styles.product_list_checkout}>
               <h3 className={styles.checkout_total}>
-                ${cartPhones.reduce((a, b) => a + b.price * b.amount, 0)}
+                $
+                {cartPhones.reduce((accum, phone) => {
+                  if (!phone.amount) {
+                    return accum;
+                  }
+
+                  return accum + phone.price * phone.amount;
+                }, 0)}
               </h3>
               <p className={styles.checkout_count}>
                 Total for {cartPhones.length} items

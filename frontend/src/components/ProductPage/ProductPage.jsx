@@ -29,7 +29,7 @@ export const ProductPage = () => {
           >
             <SwiperSlide>
               <img
-                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/00.jpg`}
+                src={`https://product-catalog-8d6r.onrender.com/static/img/phones/apple-iphone-xr/red/00.jpg`}
                 alt="iphone14 banner"
                 className={styles.ProductPage__photos_img}
                 style={{
@@ -39,7 +39,7 @@ export const ProductPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <img
-                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/01.jpg`}
+                src={`https://product-catalog-8d6r.onrender.com/static/img/phones/apple-iphone-xr/red/01.jpg`}
                 alt="phones banner"
                 className={styles.ProductPage__photos_img}
                 style={{
@@ -49,7 +49,7 @@ export const ProductPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <img
-                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/02.jpg`}
+                src={`https://product-catalog-8d6r.onrender.com/static/img/phones/apple-iphone-xr/red/02.jpg`}
                 alt="phones banner"
                 className={styles.ProductPage__photos_img}
                 style={{
@@ -59,7 +59,7 @@ export const ProductPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <img
-                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/03.jpg`}
+                src={`https://product-catalog-8d6r.onrender.com/static/img/phones/apple-iphone-xr/red/03.jpg`}
                 alt="phones banner"
                 className={styles.ProductPage__photos_img}
                 style={{
@@ -69,7 +69,7 @@ export const ProductPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <img
-                src={`https://fast-shelf-97147.herokuapp.com/static/img/phones/apple-iphone-xr/red/04.jpg`}
+                src={`https://product-catalog-8d6r.onrender.com/static/img/phones/apple-iphone-xr/red/04.jpg`}
                 alt="phones banner"
                 className={styles.ProductPage__photos_img}
                 style={{

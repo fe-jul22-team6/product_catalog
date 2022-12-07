@@ -65,7 +65,7 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
     <section className={styles.card}>
       <div className={styles.card__content}>
         <img
-          src={`https://fast-shelf-97147.herokuapp.com/static/${image}`}
+          src={`https://product-catalog-8d6r.onrender.com/static/${image}`}
           className={styles.card__image}
         />
         <div className={styles.card__name}>{name}</div>

@@ -83,7 +83,7 @@ export const HomePage: React.FC = () => {
                   src={
                     onTablet
                       ? iphonesmall
-                      : 'https://fast-shelf-97147.herokuapp.com/static/img/banner-phones.png'
+                      : 'https://product-catalog-8d6r.onrender.com/static/img/banner-phones.png'
                   }
                   alt="phones banner"
                   className={styles.phones__banner_img}
