@@ -12,5 +12,5 @@ export interface Phone {
   ram: string;
   year: number;
   image: string;
-  amount: number;
+  amount?: number;
 }
