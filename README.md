@@ -15,6 +15,8 @@ Technologies used:
 - Node.js, Express.js
 - HTML, CSS, SASS
 
+P.S. After opening an app, you should wait for 2 minutes, so server could start
+
 # Get the initial code
 1. Clone the repo
 1. Run `npm install` to install the dependencies
